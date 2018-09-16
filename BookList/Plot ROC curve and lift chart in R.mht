@@ -1,0 +1,2870 @@
+From: <Saved by Mozilla 5.0 (Macintosh)>
+Subject: Plot ROC curve and lift chart in R =?utf-8?Q?=C2=AB?= Heuristic
+ Andrew
+Date: Wed, 07 Sep 2011 13:31:20 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_5BA3D085.ABDFA7B9"
+X-MAF-Information: Produced By MAF V2.0.1
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://heuristically.wordpress.com/2009/12/18/plot-roc-curve-lift-chart-random-forest/
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml" dir=3D"ltr" lang=3D"en"><head profile=3D"http://gmpg.org/xf=
+n/11">
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8">
+	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+	<title>Plot ROC curve and lift chart in R =C2=AB Heuristic Andrew</title>
+
+	<style type=3D"text/css" media=3D"screen"><!--
+/* Effective stylesheet produced by snapshot save */
+@import url("urn:snapshot-0333BDC7:http://s0.wp.com/wp-content/themes/pub/b=
+lue-green/style.css?m=3D1306912008g");
+--></style>
+
+	<link rel=3D"pingback" href=3D"http://heuristically.wordpress.com/xmlrpc.p=
+hp">
+	<link rel=3D"alternate" type=3D"application/rss+xml" title=3D"Heuristic An=
+drew =C2=BB Feed" href=3D"http://heuristically.wordpress.com/feed/">
+<link rel=3D"alternate" type=3D"application/rss+xml" title=3D"Heuristic And=
+rew =C2=BB Comments Feed" href=3D"http://heuristically.wordpress.com/commen=
+ts/feed/">
+<link rel=3D"alternate" type=3D"application/rss+xml" title=3D"Heuristic And=
+rew =C2=BB Plot ROC curve and lift chart in=C2=A0R Comments Feed" href=3D"h=
+ttp://heuristically.wordpress.com/2009/12/18/plot-roc-curve-lift-chart-rand=
+om-forest/feed/">
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link rel=3D"stylesheet" href=3D"urn:snapshot-13B8023A:http://s0.wp.com/wp-=
+content/themes/h4/global.css?m=3D1313012185g" type=3D"text/css">
+<link rel=3D"stylesheet" id=3D"post-reactions-css" href=3D"urn:snapshot-C99=
+47AF7:http://s2.wp.com/wp-content/mu-plugins/post-react-2/style.css?m=3D131=
+4297785g&amp;ver=3D3" type=3D"text/css" media=3D"all">
+<script type=3D"text/javascript" src=3D"urn:snapshot-826682C5:http://s0.wp.=
+com/wp-includes/js/jquery/jquery.js?m=3D1306911983g&amp;ver=3D1.6.1"></scri=
+pt>
+<script type=3D"text/javascript" src=3D"urn:snapshot-6BAB47C8:http://s1.wp.=
+com/wp-includes/js/comment-reply.js?m=3D1306911986g&amp;ver=3D20090102"></s=
+cript>
+<link rel=3D"stylesheet" id=3D"highlander-comments-css" href=3D"urn:snapsho=
+t-A8298CC1:http://s1.wp.com/wp-content/mu-plugins/highlander-comments/style=
+.css?m=3D1309455918g&amp;ver=3D20110620" type=3D"text/css" media=3D"all">
+<!--[if lt IE 8]>
+<link rel=3D'stylesheet' id=3D'highlander-comments-ie7-css'  href=3D'http:/=
+/s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=3D1307=
+172302g&#038;ver=3D20110606' type=3D'text/css' media=3D'all' />
+<![endif]-->
+<link rel=3D"EditURI" type=3D"application/rsd+xml" title=3D"RSD" href=3D"ht=
+tp://heuristically.wordpress.com/xmlrpc.php?rsd">
+<link rel=3D"wlwmanifest" type=3D"application/wlwmanifest+xml" href=3D"http=
+://heuristically.wordpress.com/wp-includes/wlwmanifest.xml">=20
+<link rel=3D"index" title=3D"Heuristic Andrew" href=3D"http://heuristically=
+.wordpress.com/">
+<link rel=3D"prev" title=3D"=E2=80=9COutlook cannot open this item.=E2=80=
+=9D and tasks=C2=A0missing" href=3D"http://heuristically.wordpress.com/2009=
+/10/08/outlook-cannot-open-this-item-tasks-missing/">
+<link rel=3D"next" title=3D"Compare performance of machine learning classif=
+iers in=C2=A0R" href=3D"http://heuristically.wordpress.com/2009/12/23/compa=
+re-performance-machine-learning-classifiers-r/">
+<meta name=3D"generator" content=3D"WordPress.com">
+<link rel=3D"canonical" href=3D"#">
+<link rel=3D"shortlink" href=3D"http://wp.me/pB0zV-2r">
+<link rel=3D"alternate" type=3D"application/json+oembed" href=3D"http://pub=
+lic-api.wordpress.com/oembed/1.0/?format=3Djson&amp;url=3Dhttp%3A%2F%2Fheur=
+istically.wordpress.com%2F2009%2F12%2F18%2Fplot-roc-curve-lift-chart-random=
+-forest%2F&amp;for=3Dwpcom-auto-discovery"><link rel=3D"alternate" type=3D"=
+application/xml+oembed" href=3D"http://public-api.wordpress.com/oembed/1.0/=
+?format=3Dxml&amp;url=3Dhttp%3A%2F%2Fheuristically.wordpress.com%2F2009%2F1=
+2%2F18%2Fplot-roc-curve-lift-chart-random-forest%2F&amp;for=3Dwpcom-auto-di=
+scovery"><meta property=3D"og:type" content=3D"article">
+<meta property=3D"og:title" content=3D"Plot ROC curve and lift chart in=C2=
+=A0R">
+<meta property=3D"og:url" content=3D"http://heuristically.wordpress.com/200=
+9/12/18/plot-roc-curve-lift-chart-random-forest/">
+<meta property=3D"og:description" content=3D"This tutorial with real R code=
+ demonstrates how to create a predictive model using cforest (Breiman's ran=
+dom forests) from the package party, evaluate the predictive model on a sep=
+arate set of data...">
+<meta property=3D"og:site_name" content=3D"Heuristic Andrew">
+<link ilo-ph-fix=3D"tofix" alt=3D"[Image]" ilo-full-src=3D"http://s2.wp.com=
+/i/favicon.ico?m=3D1311976024g" rel=3D"shortcut icon" type=3D"image/x-icon"=
+ href=3D"urn:not-available:http://s2.wp.com/i/favicon.ico?m=3D1311976024g"=
+ sizes=3D"16x16 24x24 32x32 48x48">
+<link ilo-ph-fix=3D"tofix" alt=3D"[Image]" ilo-full-src=3D"http://s2.wp.com=
+/i/favicon.ico?m=3D1311976024g" rel=3D"icon" type=3D"image/x-icon" href=3D"=
+urn:not-available:http://s2.wp.com/i/favicon.ico?m=3D1311976024g" sizes=3D"=
+16x16 24x24 32x32 48x48">
+<link rel=3D"apple-touch-icon-precomposed" href=3D"http://s0.wp.com/i/webcl=
+ip.png?m=3D1311618117g">
+<link rel=3D"openid.server" href=3D"http://heuristically.wordpress.com/?ope=
+nidserver=3D1">
+<link rel=3D"openid.delegate" href=3D"http://heuristically.wordpress.com/">
+<link rel=3D"search" type=3D"application/opensearchdescription+xml" href=3D=
+"http://heuristically.wordpress.com/osd.xml" title=3D"Heuristic Andrew">
+<link rel=3D"search" type=3D"application/opensearchdescription+xml" href=3D=
+"http://wordpress.com/opensearch.xml" title=3D"WordPress.com">
+	<style type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+--></style>
+	<meta name=3D"application-name" content=3D"Heuristic Andrew"><meta name=3D=
+"msapplication-window" content=3D"width=3Ddevice-width;height=3Ddevice-heig=
+ht"><meta name=3D"msapplication-tooltip" content=3D"Good-enough solutions=
+ for an imperfect world"><meta name=3D"msapplication-task" content=3D"name=
+=3DSubscribe;action-uri=3Dhttp://heuristically.wordpress.com/feed/;icon-uri=
+=3Dhttp://s2.wp.com/i/favicon.ico"><meta name=3D"msapplication-task" conten=
+t=3D"name=3DSign up for a free blog;action-uri=3Dhttp://wordpress.com/signu=
+p/;icon-uri=3Dhttp://s2.wp.com/i/favicon.ico"><meta name=3D"msapplication-t=
+ask" content=3D"name=3DWordPress.com Support;action-uri=3Dhttp://support.wo=
+rdpress.com/;icon-uri=3Dhttp://s2.wp.com/i/favicon.ico"><meta name=3D"msapp=
+lication-task" content=3D"name=3DWordPress.com Forums;action-uri=3Dhttp://f=
+orums.wordpress.com/;icon-uri=3Dhttp://s2.wp.com/i/favicon.ico">			<style=
+ type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+.tpp { height: 80px; margin: 20px 0pt 10px; }
+.tpp a { text-decoration: none; }
+.tpph { text-transform: uppercase; font: bold 8pt/10pt Arial,Helvetica,sans=
+-serif; color: rgb(51, 51, 51); margin: 0.5em 0pt; display: block; }
+.tppi { float: left; margin: 0pt 5px 0pt 0pt ! important; border: 1px solid=
+ rgb(143, 195, 62) ! important; width: 126px ! important; height: 78px ! im=
+portant; }
+.tppl { float: left; display: block; background: url("urn:not-available:htt=
+p://s0.wp.com/i/tpp/ep.jpg") no-repeat scroll left top transparent; margin-=
+right: 5px ! important; color: rgb(143, 195, 62); height: 40px; width: 160p=
+x; padding: 45px 10px 0pt; font-size: 9pt; overflow: hidden; line-height:=
+ 1.2em; }
+.tppt { text-decoration: underline; font-size: 10.5pt; display: block; marg=
+in: 0.5em 0pt; overflow: hidden; height: 3.5em; line-height: 1.2em; }
+--></style>
+		=09
+<script type=3D"text/javascript" src=3D"urn:snapshot-0B1BBF21:http://rt.lif=
+tdna.com/liftrtb2_1.js"></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-1AD1F57F:http://rt.lif=
+tdna.com/WP.js"></script>
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script src=3D"urn:snapshot-6E4095C3:http://www.google-analytic=
+s.com/ga.js" async=3D"" type=3D"text/javascript"></script>
+<link href=3D"urn:snapshot-EA0A2C47:http://s0.wp.com/wp-content/plugins/syn=
+taxhighlighter-wpcom/shThemeDefault.css?m=3D1306911997g&amp;amp;ver=3D2.1.3=
+64b" type=3D"text/css" rel=3D"stylesheet"><style type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#live_link { background: url("urn:download-error:data:image/png;base64,iVBO=
+Rw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXM=
+AAAsTAAALEwEAmpwYAAAAB3RJTUUH2AMJCQY36Sc4vgAAAlRJREFUeNpV0r9PE3EABfD3veu1lJ=
+Yr15ZCoBHBqJBAMEbjL0hYFAkyOAmJMUYd/Q+cXF1wYPQPILppYkKIRARiMDGoaAKimBaKHMWDX=
+nu93venE0Tf9Ib3tg/BP7m3NGgwxtKcM4vyIKSk4BBqnwux9/LGKjvckcNy9/1Akgk2ZJHMWNyw=
++qWUMSGZ51R2FzbdX1NSyOnZWznn6HRn8UqSCv6gLdz58GSsL2voURJIirAWhh+U1fLO4tbKztd=
+JIvHsw/1NR7/97pJBOR9tDXc+6rMGsg4vkd3AhkMdVJgLounkdKLHdL1S13ZpdyMzbK5pnNF0I0=
+mNn4r3Ze3AJrZvo0zL8KkPyil6rTOgipFzrRezLXVt4zWKtBbwWjIeTgyEQlHiUhepcBpNkSaYe=
+hxX20Yw2HYd3VYP6iNRYhrpAeojGfJqvs7rRIyKGpSUGOm4iYgWwX7wB72ps/hWXMZCbgaNkUYQ=
+rseUr3SNB0JQRj0DBnSlYWN/DcfNEzifuYzVvS94vf4cVeoiBB2ScY8IiBBnytk7KM5XG8qj9SR=
+ClrbnUKNVZKLNWMjPwKkWkYk146BSUbZrz0PC0ZuHzaBYLokq9S90p3pMJRnJl35gtfgZQnAko0=
+lY4WY1+2lu63s+N0EE+agXXrkydc3czjtF7noHXccSx82mWIY0hBpgRVMIalK9WX67tfJzfZJo5=
+EVuouAdieh4kk3KQA21J1rGmuoy/UToMSG5t+vaC5u/7Smikenc04LzHyMAaH+cNcBVGgyWClSI=
+gHAA+2DYy00Wjuz9Bce5MucW9xnuAAAAAElFTkSuQmCC") no-repeat scroll 100% 50% pa=
+leGreen; padding-right: 17px; }
+--></style><style type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#dead_link { background: url("urn:download-error:data:image/png;base64,iVBO=
+Rw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXM=
+AAAsTAAALEwEAmpwYAAAAB3RJTUUH2AMJCQkjdGXwDAAAAcpJREFUeNptkj9PFHEQhp/ZBcIhxy=
+KHYgNCYUxogE0OpdDGxsQCY6e5ggS1Mn4Ce621u7MCYqOdX4DkSLTBqwyNiQmJBiJiDjmWP/ub1=
++IAMXGqmTx5M5nJY5wpwRiQHPfoL2rG8PVksDOBlKRYZWgwxcwkIQlc0o+fDe3sPu6E1dOQIGWg=
+/yUT4zOUBiLtHYAHFBy6YvRrW+Hzl4/e/P2kAJ8iwRhJscrE+AzDwxG3Z2E/oO9bKMvhzj104aL=
+Z1dFr9PZUWzDWASQMDaYqDZjdvAWzd2HkMlpcJKpUsMlJdHiI3i1Ffr4v9d29pEMnt7UyfOkNNj=
+KKTU8Tl8tghq+sEGqvUZwjZA5EAiShPIetLXxhASSIY3An1Gr4xkabq70iar9OkOeoWCSqVMAM8=
+hzMiObnIUnQ0RFyR0DkgNylzhh7cB+bmsLrdQ7n5gj1OlG5TPxoHro7kUsC4mdQUB5u0NdziW/r=
+5q2M/PkLfG2NsLwMkRHevyVkWQib26t+FJYMIIOUvt5XdmXkunXEke/sQchRCNDdRfAQ8vXND97=
+af1qCxqkRLUj9XKFq/cUUMMmRQHKFZquh7OBhCRr/aATQ/I97foxKZ9z7A9QA5voyr3dtAAAAAE=
+lFTkSuQmCC") no-repeat scroll 100% 50% lightPink; padding-right: 17px; }
+--></style><style type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#mayb_link { background: url("urn:download-error:data:image/png;base64,iVBO=
+Rw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWF=
+nZVJlYWR5ccllPAAAAOxJREFUeNqMkk8OwVAQxr+276kdCfuegGOIBTfgBhYsxAlIRMQJxAXEQl=
+2EG5QLdFlSHTO0/raYZPLevPl+ne+lzwBgxEmyHsPcGW9hq5PNS8S9kPem4sKKDyIRuGvCxgU87=
+wY0mgD3jk9wqGLg/nUBKlWg1QZ8HxgNCYc9MJ4YV5jBnOgsLigrlytNSql7LQNN8YkfUSg+9qwP=
+zG9iudegT+h0jNdGlq3pTFOprKjb0x+9TEjuMV/o1N5Xe46Tfi5mNdMn/Bnyr8z4JXxEvUbYbVO=
+5SKAz0+rPKVqg5N0lE8VqkCLOizjJiwADACqhr7BunfI1AAAAAElFTkSuQmCC") no-repeat=
+ scroll 100% 50% yellow; padding-right: 17px; }
+--></style><style type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#redr_link { background: url("urn:download-error:data:image/png;base64,iVBO=
+Rw0KGgoAAAANSUhEUgAAADwAAAAMCAIAAACx5EmIAAAABGdBTUEAALGPC%2FxhBQAAAuNJREFUS=
+EvVVFtIk2EY%2FldeOCTzQiqzwIWoFEFCqRUJ00Kdu%2BgijA6yqKAbO1xUlumkolBc%2B5da6c=
+wxxSAtcTLxkBSIJ9B1QM3S7EKzYAkeMCoievrfb9%2FcdFsLusmPn5%2F39Dzv87%2Ff938yAMK=
+yW5JoTA2hUIfSUnoMejT0UdDPmoJWi09Aby3yjf6K%2Fy3%2FtAa6GncKgZz%2BYmnai56rzf76=
+2Ki%2B9QusBVCd81fsNW%2BH5uJfAQ%2Buh7DOQ%2FQrIyl44YxHCQhM4k7HI5jN6HjrwrRVwyR=
+99zhBnsxhahhtbGdqqzD5AZUV6Bkh1xP4vIWoWlibuQnEyCAo0NzFmaVUlRkjM9xdYBuZw4loBC=
+T6EF3Zhd5ODL6GXMDmk1SkPwRhJRITSd8NNvvsJLLj4qFYS4bUMW8nH4Njr6I3wTKJsmNLgeJhy=
+iYk0FvfiaGHbGMDsENDtBGSvQrxWyloHqDIAlvjOG6mIPyAD9ELJyQuFmNSzQwhT9%2FH7Cxy06=
+iBg%2BtMLRkv73LRBSkQYnhKkcmo570DzzdQUsxEaDIZ6mAEq8m4d4TqHStrO6l3NOJsUsFRxGb=
+5EF33Bg9yqPpWO6voIzs0DCGrEbkFkVGYnaCI1c6yY15Ea8r%2BBKx2O2NSXbIcQfuoPmMDVii5=
+Jmsu%2FwCpEWcDHp%2BFMt%2BH6GEWP7WNYLZvfNKlbLPqtVBfAb5TKruRIgPlXkQfr2AUdkp5A=
+nPZAbNcw8Z4pjUcgUx00X7XpC%2FshhDEJ83ZgAkbmhZdaG63R7%2FzY%2BicrCEnR0l06en0vl=
+TPIuxMp6YiIoSMZz%2Bh3QUhjLfJKOYUlz2A1xmJSkXvzBIqy2NUe9m%2BhwiQhSFtD0UaPi5lS=
+5NDkHtMenoUoohpZ%2FxdD8QijM6T32qCwYBWNm%2FHqi%2BGTo9fwG0Rn4HBdpRbKG4U0T3qKv=
+MEdtURVZ3zusAP3ClBoYlDpJRBxPuv3HVn67bAyFo4l%2FMPcI%2F99%2FayFP0b9B9I5enpru8=
+AAAAASUVORK5CYII%3D") no-repeat scroll 100% 50% lightPink; padding-right:=
+ 65px; }
+--></style><style type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#ok_img_link { background: url("urn:download-error:data:image/png;base64,iV=
+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
+AAElFTkSuQmCC") no-repeat scroll 100% 50% paleGreen; padding-right: 120px; }
+--></style><style type=3D"text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#bad_img_link { background: url("urn:download-error:data:image/png;base64,i=
+VBORw0KGgoAAAANSUhEUgAAAF4AAAAOCAIAAAApPjzOAAAABGdBTUEAALGPC/xhBQAABCNJREFU=
+WEftln9M1GUcx7/MbDaEln+0asmyzVuycKNW1vrBghULSPyjyMFa12kc3lEehkyYuXYtfxzxY3C=
+DOrQQ22zgwoZoP0VHoWs2TJuFJWWNYbQif6VJ3avn89z3PL9w4MEf/sWzZ8f7+3k+v573836eEQ=
+cY0yMqA4qa6RGVAWOal/EYmKZmXG2EqdndQOFG8Sos5NszfPEeq+umLqi9zdbwM+Tl0fPr1BPGE=
+tnXhdPJuVhcx/fZWU9ZfWg5TI1sphHOqjeZbSfxpmHcOvUiqxdZw88J44cGp54wlsj2NdL8UCyu=
+Y3wCz9CsT27p7Zc7D1PT08br2+Bvyd46gC8LY76ZILBGTiPwWSRftRvHci5ewuWkTx9T7w6cLtx=
+uev+Qz1fTI+HyfYGyMvE82kFxHYP7KSyiuVtW7A5erolkVoVWFuOunqhW8CchWs2gdYe7XpPm/w=
+Sng+IrckpvRTjLI95dmylyS7e6WTz3SeATBfQHeWE+s9KtqpFzTtIyslKTfwszk/H7mWmQtUkc0=
+gzx2bCBeA06z3K8TkB9A57FAi6AN8NKzaDYt/azdZmApDTyHxGgZmWF/ObpyzvbwJZN0ztS615P=
+lFodw/CD+Jf4KckWoAyXR4iaRBvr1wtYVCor63QhZUlJEKBGi0PAWw08epsAxW/5YyY1fZeoyiV=
+pqZUaOedkKzV3oyqr4FwXlZXkP6hT6xsXOCKeI92Cd2kF723C5zJ3ewLeeNxKzZAsbf+F7W6zP/=
+ojeR4ymFeguxnB58M2Q5YWFqHuxqhaX8LKVIybqK2kxi+rzwVGU6NUo0b+XK7PgP/Ex6flGTr10=
+g6q9PmVB/C9bdrPd4mlSx0pbHZwf8lVqUmBkxJT8Aqlq/DVUbOR030ROkLb6w7yprp9SkdtBPcJ=
++HkCalaEqTksoOkbaSLjBmzLzNbveYqL8LBB8gr4cXStA/DiAuLm4V1LaQWNjbTtG03N79pgtxG=
+fZWb4KMQWzDDI9Apo8TNHa1bNo0oAnQI6deSeCnJ8V6XmLrPd3FoBmSpRqml5oEyA90nJeBCy40=
+2NrNPKHIiZmsBhyZM+iwVKIz0S+/6pMEfFUWrt/5ctBWFyjwhoveJpD12o0DP8vHoylGq0UhKXC=
+Bj+QPDn/7DbT9zNJlnKsvZTOCZLn5wX48ctbGq2UvNSCsYcU4FbTlChXqYE8Tj1tcmukciAfveG=
+tPzUbKiV3z3DjGj5qLl4ubZ/Fwk3WxgQe+A4gWfDGzsooErxCikGCTkC7HeYeTLvxJgdpdaHv2m=
+3haab/V0zfehPq8c8GIVz1MuiVA+nvycpLJD2Q2L56xhzw5ZUu5nhRm3xHuBpFXidlRpLkQk/Vr=
+nY0Ssewzsl3VexR07e81rWGtPd5P8brl4S1pGBp33y251MxLWsNaav/wG6GRXYoAbWagAAAABJR=
+U5ErkJggg=3D=3D") no-repeat scroll 100% 50% lightPink; padding-right: 95px;=
+ }
+--></style><link rel=3D"stylesheet" type=3D"text/css" id=3D"gravatar-card-c=
+ss" href=3D"urn:snapshot-6ADD2D91:http://s.gravatar.com/css/hovercard.css?v=
+=3D6"><link rel=3D"stylesheet" type=3D"text/css" id=3D"gravatar-card-servic=
+es-css" href=3D"urn:snapshot-5790BCF2:http://s.gravatar.com/css/services.cs=
+s?v=3D5"><script><!--
+/* Script removed by snapshot save */
+--></script><link href=3D"urn:snapshot-9B686ACA:chrome://translator/skin/fl=
+oatingPanel.css" type=3D"text/css" rel=3D"stylesheet"></head>
+
+<body class=3D"typekit-enabled highlander-enabled highlander-light">
+<div id=3D"rap">
+<h1 id=3D"header"><a href=3D"http://heuristically.wordpress.com/">Heuristic=
+ Andrew</a></h1>
+
+<div id=3D"content">
+<!-- end header -->
+
+
+<h2>December 18, 2009</h2>
+<div class=3D"post-151 post type-post status-publish format-standard hentry=
+ category-machine-learning-and-data-mining tag-howto tag-machine-learning=
+ tag-r tag-r-project tag-tutorial" id=3D"post-151">
+	 <h3 class=3D"storytitle"><a href=3D"#" rel=3D"bookmark">Plot ROC curve an=
+d lift chart in=C2=A0R</a></h3>
+	<div class=3D"meta">Filed under:  <a href=3D"http://heuristically.wordpres=
+s.com/category/machine-learning-and-data-mining/" title=3D"View all posts=
+ in Machine learning and data mining" rel=3D"category tag">Machine learning=
+ and data mining</a> =E2=80=94 Tags: <a href=3D"http://heuristically.wordpr=
+ess.com/tag/howto/" rel=3D"tag">howto</a>, <a href=3D"http://heuristically.=
+wordpress.com/tag/machine-learning/" rel=3D"tag">machine learning</a>, <a=
+ href=3D"http://heuristically.wordpress.com/tag/r/" rel=3D"tag">r</a>, <a=
+ href=3D"http://heuristically.wordpress.com/tag/r-project/" rel=3D"tag">r-p=
+roject</a>, <a href=3D"http://heuristically.wordpress.com/tag/tutorial/" re=
+l=3D"tag">tutorial</a> =E2=80=94  heuristicandrew @ 11:32 am </div>
+
+	<div class=3D"storycontent">
+		<p>This tutorial with real <a rel=3D"external nofollow" href=3D"http://ww=
+w.r-project.org/">R</a> code demonstrates how to create a predictive model=
+ using cforest (Breiman=E2=80=99s random forests) from the package <a rel=
+=3D"external nofollow" href=3D"http://cran.r-project.org/web/packages/party=
+/index.html">party</a>, evaluate the predictive model on a separate set of=
+ data, and then plot the performance using ROC curves and a lift chart. The=
+se charts are useful for evaluating model performance in data mining and ma=
+chine learning.</p>
+<div class=3D"syntaxhighlighter  " id=3D"highlighter_160463"><div class=3D"=
+bar                                                   show"><div class=3D"t=
+oolbar"><a class=3D"item viewSource" style=3D"width: 16px; height: 16px;"=
+ title=3D"view source" href=3D"#viewSource">view source</a><div class=3D"it=
+em copyToClipboard"><div role=3D"button" tabindex=3D"0" srcattribute=3D"htt=
+p://s2.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/script=
+s/clipboard.swf?m=3D1306912000g" title=3D"http://s2.wp.com/wp-content/plugi=
+ns/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf?m=3D1306912000=
+g" style=3D"background: url(&quot;chrome://flashblock/content/flash.png&quo=
+t;) no-repeat scroll center center transparent ! important; min-width: 32px=
+ ! important; min-height: 32px ! important; width: 32px; height: 32px; bord=
+er: 1px solid rgb(223, 223, 223); cursor: pointer; overflow: hidden; displa=
+y: inline-block; visibility: visible ! important; -moz-box-sizing: border-b=
+ox;" bgactive=3D"url(chrome://flashblock/content/flashplay.png) no-repeat=
+ center" bginactive=3D"url(chrome://flashblock/content/flash.png) no-repeat=
+ center"></div></div><a class=3D"item printSource" style=3D"width: 16px; he=
+ight: 16px;" title=3D"print" href=3D"#printSource">print</a><a class=3D"ite=
+m about" style=3D"width: 16px; height: 16px;" title=3D"?" href=3D"#about">?=
+</a></div></div><div class=3D"lines"><div class=3D"line alt1"><table><tbody=
+><tr><td class=3D"number"><code>01</code></td><td class=3D"content"><code=
+ class=3D"plain"># You only need to install packages once per machine</code=
+></td></tr></tbody></table></div><div class=3D"line alt2"><table><tbody><tr=
+><td class=3D"number"><code>02</code></td><td class=3D"content"><code class=
+=3D"plain"># (plus maybe after upgrading R), but otherwise they persist acr=
+oss R sessions.</code></td></tr></tbody></table></div><div class=3D"line al=
+t1"><table><tbody><tr><td class=3D"number"><code>03</code></td><td class=3D=
+"content"><code class=3D"plain">install.packages('party')</code></td></tr><=
+/tbody></table></div><div class=3D"line alt2"><table><tbody><tr><td class=
+=3D"number"><code>04</code></td><td class=3D"content"><code class=3D"plain"=
+>install.packages('ROCR')</code></td></tr></tbody></table></div><div class=
+=3D"line alt1"><table><tbody><tr><td class=3D"number"><code>05</code></td><=
+td class=3D"content">=C2=A0</td></tr></tbody></table></div><div class=3D"li=
+ne alt2"><table><tbody><tr><td class=3D"number"><code>06</code></td><td cla=
+ss=3D"content"><code class=3D"plain"># Load the kyphosis data set.</code></=
+td></tr></tbody></table></div><div class=3D"line alt1"><table><tbody><tr><t=
+d class=3D"number"><code>07</code></td><td class=3D"content"><code class=3D=
+"plain">require(rpart)</code></td></tr></tbody></table></div><div class=3D"=
+line alt2"><table><tbody><tr><td class=3D"number"><code>08</code></td><td=
+ class=3D"content">=C2=A0</td></tr></tbody></table></div><div class=3D"line=
+ alt1"><table><tbody><tr><td class=3D"number"><code>09</code></td><td class=
+=3D"content"><code class=3D"plain"># Split randomly</code></td></tr></tbody=
+></table></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"numb=
+er"><code>10</code></td><td class=3D"content"><code class=3D"plain">x &lt;-=
+ kyphosis[sample(1:nrow(kyphosis), nrow(kyphosis), replace =3D F),]</code><=
+/td></tr></tbody></table></div><div class=3D"line alt1"><table><tbody><tr><=
+td class=3D"number"><code>11</code></td><td class=3D"content"><code class=
+=3D"plain">x.train &lt;- kyphosis[1:floor(nrow(x)*.75), ]</code></td></tr><=
+/tbody></table></div><div class=3D"line alt2"><table><tbody><tr><td class=
+=3D"number"><code>12</code></td><td class=3D"content"><code class=3D"plain"=
+>x.evaluate &lt;- kyphosis[(floor(nrow(x)*.75)+1):nrow(x), ]</code></td></t=
+r></tbody></table></div><div class=3D"line alt1"><table><tbody><tr><td clas=
+s=3D"number"><code>13</code></td><td class=3D"content">=C2=A0</td></tr></tb=
+ody></table></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"n=
+umber"><code>14</code></td><td class=3D"content"><code class=3D"plain"># Cr=
+eate a model using "random forest and bagging ensemble algorithms</code></t=
+d></tr></tbody></table></div><div class=3D"line alt1"><table><tbody><tr><td=
+ class=3D"number"><code>15</code></td><td class=3D"content"><code class=3D"=
+plain"># utilizing conditional inference trees."</code></td></tr></tbody></=
+table></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"number"=
+><code>16</code></td><td class=3D"content"><code class=3D"plain">require(pa=
+rty)</code></td></tr></tbody></table></div><div class=3D"line alt1"><table>=
+<tbody><tr><td class=3D"number"><code>17</code></td><td class=3D"content"><=
+code class=3D"plain">x.model &lt;- cforest(Kyphosis ~ Age + Number + Start,=
+ data=3Dx.train,</code></td></tr></tbody></table></div><div class=3D"line=
+ alt2"><table><tbody><tr><td class=3D"number"><code>18</code></td><td class=
+=3D"content"><code class=3D"plain">control =3D cforest_unbiased(mtry =3D 3)=
+)</code></td></tr></tbody></table></div><div class=3D"line alt1"><table><tb=
+ody><tr><td class=3D"number"><code>19</code></td><td class=3D"content">=C2=
+=A0</td></tr></tbody></table></div><div class=3D"line alt2"><table><tbody><=
+tr><td class=3D"number"><code>20</code></td><td class=3D"content"><code cla=
+ss=3D"plain"># Alternatively, use "recursive partitioning [...] in a condit=
+ional</code></td></tr></tbody></table></div><div class=3D"line alt1"><table=
+><tbody><tr><td class=3D"number"><code>21</code></td><td class=3D"content">=
+<code class=3D"plain"># inference framework."</code></td></tr></tbody></tab=
+le></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"number"><c=
+ode>22</code></td><td class=3D"content"><code class=3D"plain"># x.model &lt=
+;- ctree(Kyphosis ~ Age + Number + Start, data=3Dx.train)</code></td></tr><=
+/tbody></table></div><div class=3D"line alt1"><table><tbody><tr><td class=
+=3D"number"><code>23</code></td><td class=3D"content">=C2=A0</td></tr></tbo=
+dy></table></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"nu=
+mber"><code>24</code></td><td class=3D"content"><code class=3D"plain"># ctr=
+ee plots nicely (but cforest doesn"t plot)</code></td></tr></tbody></table>=
+</div><div class=3D"line alt1"><table><tbody><tr><td class=3D"number"><code=
+>25</code></td><td class=3D"content"><code class=3D"plain"># plot (x.model)=
+</code></td></tr></tbody></table></div><div class=3D"line alt2"><table><tbo=
+dy><tr><td class=3D"number"><code>26</code></td><td class=3D"content">=C2=
+=A0</td></tr></tbody></table></div><div class=3D"line alt1"><table><tbody><=
+tr><td class=3D"number"><code>27</code></td><td class=3D"content"><code cla=
+ss=3D"plain"># Use the model to predict the evaluation.</code></td></tr></t=
+body></table></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"=
+number"><code>28</code></td><td class=3D"content"><code class=3D"plain">x.e=
+valuate$prediction &lt;- predict(x.model, newdata=3Dx.evaluate)</code></td>=
+</tr></tbody></table></div><div class=3D"line alt1"><table><tbody><tr><td=
+ class=3D"number"><code>29</code></td><td class=3D"content">=C2=A0</td></tr=
+></tbody></table></div><div class=3D"line alt2"><table><tbody><tr><td class=
+=3D"number"><code>30</code></td><td class=3D"content"><code class=3D"plain"=
+># Calculate the overall accuracy.</code></td></tr></tbody></table></div><d=
+iv class=3D"line alt1"><table><tbody><tr><td class=3D"number"><code>31</cod=
+e></td><td class=3D"content"><code class=3D"plain">x.evaluate$correct &lt;-=
+ x.evaluate$prediction =3D=3D x.evaluate$Kyphosis</code></td></tr></tbody><=
+/table></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"number=
+"><code>32</code></td><td class=3D"content"><code class=3D"plain">print(pas=
+te("% of predicted classifications correct", mean(x.evaluate$correct)))</co=
+de></td></tr></tbody></table></div><div class=3D"line alt1"><table><tbody><=
+tr><td class=3D"number"><code>33</code></td><td class=3D"content">=C2=A0</t=
+d></tr></tbody></table></div><div class=3D"line alt2"><table><tbody><tr><td=
+ class=3D"number"><code>34</code></td><td class=3D"content"><code class=3D"=
+plain"># Extract the class probabilities.</code></td></tr></tbody></table><=
+/div><div class=3D"line alt1"><table><tbody><tr><td class=3D"number"><code>=
+35</code></td><td class=3D"content"><code class=3D"plain">x.evaluate$probab=
+ilities &lt;- 1- unlist(treeresponse(x.model,</code></td></tr></tbody></tab=
+le></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"number"><c=
+ode>36</code></td><td class=3D"content"><code class=3D"plain">newdata=3Dx.e=
+valuate), use.names=3DF)[seq(1,nrow(x.evaluate)*2,2)]</code></td></tr></tbo=
+dy></table></div><div class=3D"line alt1"><table><tbody><tr><td class=3D"nu=
+mber"><code>37</code></td><td class=3D"content">=C2=A0</td></tr></tbody></t=
+able></div><div class=3D"line alt2"><table><tbody><tr><td class=3D"number">=
+<code>38</code></td><td class=3D"content"><code class=3D"plain"># Plot the=
+ performance of the model applied to the evaluation set as</code></td></tr>=
+</tbody></table></div><div class=3D"line alt1"><table><tbody><tr><td class=
+=3D"number"><code>39</code></td><td class=3D"content"><code class=3D"plain"=
+># an ROC curve.</code></td></tr></tbody></table></div><div class=3D"line=
+ alt2"><table><tbody><tr><td class=3D"number"><code>40</code></td><td class=
+=3D"content"><code class=3D"plain">require(ROCR)</code></td></tr></tbody></=
+table></div><div class=3D"line alt1"><table><tbody><tr><td class=3D"number"=
+><code>41</code></td><td class=3D"content"><code class=3D"plain">pred &lt;-=
+ prediction(x.evaluate$probabilities, x.evaluate$Kyphosis)</code></td></tr>=
+</tbody></table></div><div class=3D"line alt2"><table><tbody><tr><td class=
+=3D"number"><code>42</code></td><td class=3D"content"><code class=3D"plain"=
+>perf &lt;- performance(pred,"tpr","fpr")</code></td></tr></tbody></table><=
+/div><div class=3D"line alt1"><table><tbody><tr><td class=3D"number"><code>=
+43</code></td><td class=3D"content"><code class=3D"plain">plot(perf, main=
+=3D"ROC curve", colorize=3DT)</code></td></tr></tbody></table></div><div cl=
+ass=3D"line alt2"><table><tbody><tr><td class=3D"number"><code>44</code></t=
+d><td class=3D"content">=C2=A0</td></tr></tbody></table></div><div class=3D=
+"line alt1"><table><tbody><tr><td class=3D"number"><code>45</code></td><td=
+ class=3D"content"><code class=3D"plain"># And then a lift chart</code></td=
+></tr></tbody></table></div><div class=3D"line alt2"><table><tbody><tr><td=
+ class=3D"number"><code>46</code></td><td class=3D"content"><code class=3D"=
+plain">perf &lt;- performance(pred,"lift","rpp")</code></td></tr></tbody></=
+table></div><div class=3D"line alt1"><table><tbody><tr><td class=3D"number"=
+><code>47</code></td><td class=3D"content"><code class=3D"plain">plot(perf,=
+ main=3D"lift curve", colorize=3DT)</code></td></tr></tbody></table></div><=
+/div></div>
+<p>This tutorial was tested on Linux and Windows with R 2.9.</p>
+<p>Here are some exercises for the reader:</p>
+<ol>
+<li>Why use <tt>mtry=3D 3</tt>? Compare different values, or take out the=
+ <tt>control =3D ...</tt>.</li>
+<li>Output the results to PDF for printing.</li>
+<li>Try ctree instead of cforest.  Which is better?</li>
+<li>Replace cforest with other classifiers: rpart, randomForest, or svm (e1=
+071).</li>
+<li>Use 10-fold cross-validation instead of the simple splitting (though th=
+e party packages have cross-validation =E2=80=98built in.=E2=80=99).</li>
+<li>Combine two performance curves (for two different classifiers or settin=
+gs) in one plot.</li>
+</ol>
+<p>For a similar but more detailed tutorial, read <a rel=3D"external nofoll=
+ow" href=3D"http://cran.r-project.org/doc/contrib/Sharma-CreditScoring.pdf"=
+>=E2=80=9CGuide to Credit Scoring in R=E2=80=9D</a> by Dhruv Sharma.</p>
+<p>If this programming is too much for you, try rattle (a GUI interface to=
+ R for data mining) or Weka (a machine learning suite).  Otherwise, go on=
+ to the next tutorial: <a href=3D"http://heuristically.wordpress.com/2009/1=
+2/23/compare-performance-machine-learning-classifiers-r/">Compare performan=
+ce of machine learning classifiers in R</a>.</p>
+<div class=3D"tpp">
+						<a href=3D"http://ecopressed.com/" rel=3D"tppceco_A" target=3D"_top">
+							<span class=3D"tppl">
+								Eco World Content From Across The Internet.
+							</span>
+							<img ilo-full-src=3D"http://ecopressed.files.wordpress.com/2011/09/p=
+icture-2-1314851804.png?w=3D126&amp;h=3D78&amp;crop=3Dtrue" src=3D"http://e=
+copressed.files.wordpress.com/2011/09/picture-2-1314851804.png?w=3D126&amp;=
+h=3D78&amp;crop=3Dtrue" alt=3D"EcoPressed" class=3D"tppi" height=3D"78" wid=
+th=3D"126">
+							<span class=3D"tpph">
+								Featured on EcoPressed
+							</span>
+							<span class=3D"tppt">
+								Another thought on our Food Supply
+							</span>
+						</a>
+					</div>
+					<div style=3D"clear: both;"></div>
+<div id=3D"wpcom_below_post" style=3D"text-align: center; background: #; pa=
+dding: 5px; margin: 10px auto; width: 300px;">
+<span style=3D"text-align: left; letter-spacing: 1px; font: 8px/1em Verdana=
+, sans-serif; color: #ccc; text-transform: uppercase; display: block; paddi=
+ng: 0 1px;">Advertisement</span>
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+</div><div class=3D"sharedaddy sd-like-enabled sd-sharing-enabled"><div cla=
+ss=3D"robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><=
+h3 class=3D"sd-title">Share this:</h3><div class=3D"sd-content"><ul><li cla=
+ss=3D"share-facebook"><a rel=3D"nofollow" class=3D"share-facebook sd-button=
+ share-icon" href=3D"http://heuristically.wordpress.com/2009/12/18/plot-roc=
+-curve-lift-chart-random-forest/?share=3Dfacebook&amp;nb=3D1" title=3D"Shar=
+e on Facebook"><span>Facebook</span></a></li><li class=3D"share-twitter"><a=
+ rel=3D"nofollow" class=3D"share-twitter sd-button share-icon" href=3D"http=
+://heuristically.wordpress.com/2009/12/18/plot-roc-curve-lift-chart-random-=
+forest/?share=3Dtwitter&amp;nb=3D1" title=3D"Click to share on Twitter"><sp=
+an>Twitter</span></a></li><li class=3D"share-email share-service-visible"><=
+a rel=3D"nofollow" class=3D"share-email sd-button share-icon" href=3D"http:=
+//heuristically.wordpress.com/2009/12/18/plot-roc-curve-lift-chart-random-f=
+orest/?share=3Demail&amp;nb=3D1" title=3D"Click to email this to a friend">=
+<span>Email</span></a></li><li class=3D"share-print"><a rel=3D"nofollow" cl=
+ass=3D"share-print sd-button share-icon" href=3D"#print" title=3D"Click to=
+ print"><span>Print</span></a></li><li class=3D"share-end"></li></ul><div=
+ class=3D"sharing-clear"></div></div></div><div id=3D"wpl-likebox" class=3D=
+"sd-block sd-like"><h3 class=3D"sd-title">Like this:</h3><div class=3D"sd-c=
+ontent"><div id=3D"wpl-button"><a href=3D"http://heuristically.wordpress.co=
+m/2009/12/18/plot-roc-curve-lift-chart-random-forest/?like=3D1&amp;_wpnonce=
+=3Dd200a8df73" title=3D"I like this post" class=3D"like needs-login sd-butt=
+on" rel=3D"nofollow"><span>Like</span></a></div><div id=3D"wpl-count" class=
+=3D"sd-like-count">Be the first to like this post.</div></div></div></div>=
+	</div>
+
+	<div class=3D"feedback">
+                        <a href=3D"#comments" title=3D"Comment on Plot ROC=
+ curve and lift chart in=C2=A0R">Comments (1)</a>	</div>
+
+</div>
+
+<h2 id=3D"comments">1 Comment=20
+	<a href=3D"#postcomment" title=3D"Leave a comment">=C2=BB</a>
+</h2>
+
+<ol id=3D"commentlist">
+<li id=3D"comment-9" class=3D"pingback even thread-even depth-1 highlander-=
+comment">
+	<div id=3D"div-comment-9" class=3D"vcard">
+		<p>[...] For a simpler introduction, start with Plot ROC curve and lift=
+ chart in R. [...]</p>
+	<p><cite>Pingback by <span class=3D"fn"><a href=3D"http://heuristically.wo=
+rdpress.com/2009/12/23/compare-performance-machine-learning-classifiers-r/"=
+ rel=3D"external nofollow" class=3D"url">Compare performance of machine lea=
+rning classifiers in R =C2=AB Heuristic Andrew</a></span> =E2=80=94 Decembe=
+r 23, 2009 @ <a href=3D"#comment-9">3:24 pm</a></cite> </p>
+	<div class=3D"reply">
+		<a class=3D"comment-reply-link" href=3D"http://heuristically.wordpress.co=
+m/2009/12/18/plot-roc-curve-lift-chart-random-forest/?replytocom=3D9#respon=
+d" onclick=3D"">Reply</a>	</div>
+	</div>
+</li>
+</ol>
+
+<div class=3D"navigation">
+	<div class=3D"alignleft"></div>
+	<div class=3D"alignright"></div>
+</div>
+<br>
+
+
+<p><a href=3D"http://heuristically.wordpress.com/2009/12/18/plot-roc-curve-=
+lift-chart-random-forest/feed/"><abbr title=3D"Really Simple Syndication">R=
+SS</abbr> feed for comments on this post.</a>=20
+	<a href=3D"http://heuristically.wordpress.com/2009/12/18/plot-roc-curve-li=
+ft-chart-random-forest/trackback/" rel=3D"trackback">TrackBack <abbr title=
+=3D"Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+									<div class=3D"js" id=3D"respond">
+				<h3 id=3D"reply-title">Leave a Reply <small><a rel=3D"nofollow" id=3D"c=
+ancel-comment-reply-link" href=3D"#respond" style=3D"display:none;">Cancel=
+ reply</a></small></h3>
+									<form action=3D"http://heuristically.wordpress.com/wp-comments-pos=
+t.php" method=3D"post" id=3D"commentform">
+																									=09
+
+
+											=09
+<input name=3D"hc_post_as" id=3D"hc_post_as" value=3D"guest" type=3D"hidden=
+">
+
+<div class=3D"comment-form-field comment-textarea">
+	<label for=3D"comment">Enter your comment here...</label>
+	<div id=3D"comment-form-comment"><textarea tabindex=3D"-1" style=3D"resize=
+: none; overflow-y: hidden; position: absolute; top: 0px; left: -9999px; he=
+ight: 145px; width: 773px; line-height: 14.9167px; text-decoration: none;=
+ letter-spacing: normal;"></textarea><textarea style=3D"resize: none; overf=
+low-y: hidden; height: 145px;" id=3D"comment" name=3D"comment"></textarea><=
+/div>
+</div>
+
+<div id=3D"comment-form-identity">
+
+	<div id=3D"comment-form-nascar">
+		<ul>
+			<li class=3D"selected"><a href=3D"#comment-form-guest" title=3D"Guest"=
+ id=3D"postas-guest" class=3D"social_buttons sb_24 sb_guest"><span>Guest</s=
+pan></a></li>
+			<li><a href=3D"#comment-form-wordpress" title=3D"Log In" id=3D"postas-wo=
+rdpress" class=3D"social_buttons sb_24 sb_wordpress"><span>Log In</span></a=
+></li>
+			<li><a href=3D"#comment-form-load-service:Twitter" title=3D"Log In" id=
+=3D"postas-twitter" class=3D"social_buttons sb_24 sb_twitter"><span>Log In<=
+/span></a></li>
+			<li><a href=3D"#comment-form-load-service:Facebook" title=3D"Log In" id=
+=3D"postas-facebook" class=3D"social_buttons sb_24 sb_facebook"><span>Log=
+ In</span></a></li>
+		</ul>
+	</div>
+
+	<div id=3D"comment-form-guest" class=3D"comment-form-service selected">
+		<div class=3D"comment-form-padder">
+			<div class=3D"comment-form-avatar">
+				<img ilo-ph-fix=3D"fixed" ilo-full-src=3D"http://www.gravatar.com/avata=
+r/ad516503a11cd5ca435acc9bb6523536?s=3D25&amp;d=3Dmm" src=3D"urn:not-availa=
+ble:http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=3D25&=
+amp;d=3Dmm" alt=3D"Gravatar" class=3D"no-grav" height=3D"37" width=3D"25">
+			</div>
+
+				<div class=3D"comment-form-fields">
+				<div class=3D"comment-form-field comment-form-email">
+					<label for=3D"email">Email <span class=3D"required">(required)</span>=
+ <span class=3D"nopublish">(Not published)</span></label>
+					<div class=3D"comment-form-input"><input id=3D"email" name=3D"email"=
+ type=3D"text"></div>
+				</div>
+				<div class=3D"comment-form-field comment-form-author">
+					<label for=3D"author">Name <span class=3D"required">(required)</span><=
+/label>
+					<div class=3D"comment-form-input"><input id=3D"author" name=3D"author"=
+ type=3D"text"></div>
+				</div>
+				<div class=3D"comment-form-field comment-form-url">
+					<label for=3D"url">Website</label>
+					<div class=3D"comment-form-input"><input id=3D"url" name=3D"url" type=
+=3D"text"></div>
+				</div>=20
+			</div>
+=09
+		</div>
+	</div>
+
+	<div id=3D"comment-form-wordpress" class=3D"comment-form-service">
+		<div class=3D"comment-form-padder">
+			<div class=3D"comment-form-avatar">
+				<img ilo-ph-fix=3D"fixed" ilo-full-src=3D"http://s2.wp.com/wp-content/m=
+u-plugins/highlander-comments/images/wplogo.png?m=3D1306911995g" src=3D"urn=
+:not-available:http://s2.wp.com/wp-content/mu-plugins/highlander-comments/i=
+mages/wplogo.png?m=3D1306911995g" alt=3D"WordPress.com Logo" class=3D"no-gr=
+av" height=3D"37" width=3D"25">
+			</div>
+
+				<div class=3D"comment-form-fields">
+					<p id=3D"wordpress-login-first">Please log in to WordPress.com to post=
+ a comment to your blog.</p>
+				<iframe id=3D"wordpress-login-iframe" data-srcurl=3D"http://heuristical=
+ly.wordpress.com/wp-login.php?redirect_to=3Dhttp%3A%2F%2Fheuristically.word=
+press.com%2Fhighlander.login%2F&amp;action=3Dhighlander-login&amp;skin=3Dli=
+ght"></iframe>
+				</div>
+=09
+		</div>
+	</div>
+
+	<div id=3D"comment-form-twitter" class=3D"comment-form-service">
+		<div class=3D"comment-form-padder">
+			<div class=3D"comment-form-avatar">
+				<img ilo-ph-fix=3D"fixed" ilo-full-src=3D"http://www.gravatar.com/avata=
+r/ad516503a11cd5ca435acc9bb6523536?s=3D25&amp;d=3Dmm" src=3D"urn:not-availa=
+ble:http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=3D25&=
+amp;d=3Dmm" alt=3D"Twitter picture" class=3D"no-grav" height=3D"37" width=
+=3D"25">
+			</div>
+
+				<div class=3D"comment-form-fields">
+				<input name=3D"twitter_avatar" id=3D"twitter-avatar" class=3D"comment-m=
+eta-twitter" value=3D"" type=3D"hidden">
+				<input name=3D"twitter_user_id" id=3D"twitter-user_id" class=3D"comment=
+-meta-twitter" value=3D"" type=3D"hidden">
+				<input name=3D"twitter_access_token" id=3D"twitter-access_token" class=
+=3D"comment-meta-twitter" value=3D"" type=3D"hidden">
+				<p class=3D"comment-form-posting-as"><strong></strong> You are commenti=
+ng using your Twitter account. <span class=3D"comment-form-log-out">(<a hre=
+f=3D"javascript:void(0);">Log Out</a>)</span></p>
+			</div>
+=09
+		</div>
+	</div>
+
+	<div id=3D"comment-form-facebook" class=3D"comment-form-service">
+		<div class=3D"comment-form-padder">
+			<div class=3D"comment-form-avatar">
+				<img ilo-ph-fix=3D"fixed" ilo-full-src=3D"http://www.gravatar.com/avata=
+r/ad516503a11cd5ca435acc9bb6523536?s=3D25&amp;d=3Dmm" src=3D"urn:not-availa=
+ble:http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=3D25&=
+amp;d=3Dmm" alt=3D"Facebook photo" class=3D"no-grav" height=3D"37" width=3D=
+"25">
+			</div>
+
+				<div class=3D"comment-form-fields">
+				<input name=3D"fb_avatar" id=3D"facebook-avatar" class=3D"comment-meta-=
+facebook" value=3D"" type=3D"hidden">
+				<input name=3D"fb_user_id" id=3D"facebook-user_id" class=3D"comment-met=
+a-facebook" value=3D"" type=3D"hidden">
+				<input name=3D"fb_access_token" id=3D"facebook-access_token" class=3D"c=
+omment-meta-facebook" value=3D"" type=3D"hidden">
+				<p class=3D"comment-form-posting-as"><strong></strong> You are commenti=
+ng using your Facebook account. <span class=3D"comment-form-log-out">(<a hr=
+ef=3D"javascript:void(0);">Log Out</a>)</span></p>
+			</div>
+=09
+		</div>
+	</div>
+
+
+	<div id=3D"comment-form-load-service" class=3D"comment-form-service">=20
+		<p>Connecting to %s</p>=20
+	</div>
+
+=09
+</div>
+
+
+<div id=3D"comment-form-subscribe">=20
+<p class=3D"comment-subscription-form"><input name=3D"subscribe" id=3D"subs=
+cribe" value=3D"subscribe" style=3D"width: auto;" tabindex=3D"6" type=3D"ch=
+eckbox"> <label class=3D"subscribe-label" id=3D"subscribe-label" for=3D"sub=
+scribe">Notify me of follow-up comments via email.</label></p><p class=3D"c=
+omment-subscription-form"><input name=3D"subscribe_blog" id=3D"subscribe_bl=
+og" value=3D"subscribe" style=3D"width: auto;" tabindex=3D"7" type=3D"check=
+box"> <label class=3D"subscribe-label" id=3D"subscribe-blog-label" for=3D"s=
+ubscribe_blog">Notify me of new posts via email.</label></p></div>
+												<p class=3D"form-submit">
+							<input name=3D"submit" id=3D"comment-submit" value=3D"Post Comment"=
+ type=3D"submit">
+							<input name=3D"comment_post_ID" value=3D"151" id=3D"comment_post_ID"=
+ type=3D"hidden">
+<input name=3D"comment_parent" id=3D"comment_parent" value=3D"0" type=3D"hi=
+dden">
+						</p>
+					=09
+<input name=3D"genseq" value=3D"1315373705" type=3D"hidden">
+<p style=3D"display: none;"><input id=3D"akismet_comment_nonce" name=3D"aki=
+smet_comment_nonce" value=3D"b6dda3ad85" type=3D"hidden"></p><script type=
+=3D"text/javascript" src=3D"urn:snapshot-CCEFAD26:http://s2.wp.com/wp-conte=
+nt/mu-plugins/akismet-2.5/form.js?m=3D1308783981g&amp;ver=3D1"></script>
+<p style=3D"display: none;"><input id=3D"ak_js" name=3D"ak_js" value=3D"131=
+5373460286" type=3D"hidden"></p>					</form>
+							</div><!-- #respond -->
+			<div style=3D"clear: both"></div>		=09
+
+
+<!-- begin footer -->
+</div>
+
+
+<!-- begin sidebar -->
+<div id=3D"menu">
+
+<ul>
+<li id=3D"text-3" class=3D"widget widget_text">			<div class=3D"textwidget"=
+><div style=3D"text-transform:none;">This blog covers technologies includin=
+g SAS,  R, data mining, Microsoft Windows, Linux, and Custom Interaction Ce=
+nter (CIC) by Interactive Intelligence, Inc. (I3).</div></div>
+		</li>
+<li id=3D"archives-2" class=3D"widget widget_archive"><h2 class=3D"widgetti=
+tle">Archives</h2>
+		<ul>
+			<li><a href=3D"http://heuristically.wordpress.com/2011/09/" title=3D"Sep=
+tember 2011">September 2011</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2011/08/" title=3D"Augus=
+t 2011">August 2011</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2011/06/" title=3D"June=
+ 2011">June 2011</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2011/05/" title=3D"May=
+ 2011">May 2011</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2011/04/" title=3D"April=
+ 2011">April 2011</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2011/03/" title=3D"March=
+ 2011">March 2011</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2011/01/" title=3D"Janua=
+ry 2011">January 2011</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/12/" title=3D"Decem=
+ber 2010">December 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/11/" title=3D"Novem=
+ber 2010">November 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/09/" title=3D"Septe=
+mber 2010">September 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/08/" title=3D"Augus=
+t 2010">August 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/06/" title=3D"June=
+ 2010">June 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/05/" title=3D"May=
+ 2010">May 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/03/" title=3D"March=
+ 2010">March 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2010/01/" title=3D"Janua=
+ry 2010">January 2010</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2009/12/" title=3D"Decem=
+ber 2009">December 2009</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2009/10/" title=3D"Octob=
+er 2009">October 2009</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2009/09/" title=3D"Septe=
+mber 2009">September 2009</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2009/08/" title=3D"Augus=
+t 2009">August 2009</a></li>
+	<li><a href=3D"http://heuristically.wordpress.com/2009/07/" title=3D"July=
+ 2009">July 2009</a></li>
+		</ul>
+</li>
+<li id=3D"text-2" class=3D"widget widget_text">			<div class=3D"textwidget"=
+><a href=3D"http://share-compassion.org/m"><img ilo-ph-fix=3D"tofix" ilo-fu=
+ll-src=3D"http://share-compassion.org/m/c" src=3D"urn:not-available:http://=
+share-compassion.org/m/c" alt=3D"Sponsor a Child in Jesus Name with Compass=
+ion" title=3D"Sponsor a Child in Jesus Name with Compassion" border=3D"0"><=
+/a>
+</div>
+		</li>
+<li id=3D"search-2" class=3D"widget widget_search"><form role=3D"search" me=
+thod=3D"get" id=3D"searchform" action=3D"http://heuristically.wordpress.com=
+/">
+	<div><label class=3D"screen-reader-text" for=3D"s">Search for:</label>
+	<input name=3D"s" id=3D"s" type=3D"text">
+	<input id=3D"searchsubmit" value=3D"Search" type=3D"submit">
+	</div>
+	</form></li>
+<li id=3D"linkcat-1356" class=3D"widget widget_links"><h2 class=3D"widgetti=
+tle">Blogroll</h2>
+
+	<ul class=3D"xoxo blogroll">
+<li><a href=3D"http://bleachbit.sourceforge.net/" title=3D"Privacy and disk=
+ space cleaner">BleachBit</a></li>
+<li><a href=3D"http://www.oooninja.com/" title=3D"OpenOffice.org previews,=
+ reviews, tips, tutorials">OpenOffice.org Ninja</a></li>
+<li><a href=3D"http://www.r-bloggers.com/">R-Bloggers</a></li>
+<li><a href=3D"http://www.compassion.com/sponsor_a_child/default.htm" title=
+=3D"Sponsor a child through Compassion International">Sponsor a child</a></=
+li>
+
+	</ul>
+</li>
+
+<li id=3D"wp_tag_cloud" class=3D"widget wp_widget_tag_cloud"><h2 class=3D"w=
+idgettitle">Tags</h2>
+<div style=3D"overflow:hidden"><a href=3D"http://heuristically.wordpress.co=
+m/tag/bug/" class=3D"tag-link-1621" title=3D"9 topics" style=3D"font-size:=
+ 16.672566371681pt;">bug</a>
+<a href=3D"http://heuristically.wordpress.com/tag/c/" class=3D"tag-link-242=
+6" title=3D"1 topic" style=3D"font-size: 8pt;">c#</a>
+<a href=3D"http://heuristically.wordpress.com/tag/cic/" class=3D"tag-link-5=
+8684" title=3D"8 topics" style=3D"font-size: 16.053097345133pt;">cic</a>
+<a href=3D"http://heuristically.wordpress.com/tag/cleaning/" class=3D"tag-l=
+ink-53012" title=3D"1 topic" style=3D"font-size: 8pt;">cleaning</a>
+<a href=3D"http://heuristically.wordpress.com/tag/code/" class=3D"tag-link-=
+656" title=3D"9 topics" style=3D"font-size: 16.672566371681pt;">code</a>
+<a href=3D"http://heuristically.wordpress.com/tag/command-line/" class=3D"t=
+ag-link-33927" title=3D"5 topics" style=3D"font-size: 13.946902654867pt;">c=
+ommand line</a>
+<a href=3D"http://heuristically.wordpress.com/tag/crystal-reports/" class=
+=3D"tag-link-546771" title=3D"2 topics" style=3D"font-size: 10.230088495575=
+pt;">crystal reports</a>
+<a href=3D"http://heuristically.wordpress.com/tag/disk-space/" class=3D"tag=
+-link-332500" title=3D"2 topics" style=3D"font-size: 10.230088495575pt;">di=
+sk space</a>
+<a href=3D"http://heuristically.wordpress.com/tag/error-message/" class=3D"=
+tag-link-676976" title=3D"17 topics" style=3D"font-size: 19.893805309735pt;=
+">error message</a>
+<a href=3D"http://heuristically.wordpress.com/tag/howto/" class=3D"tag-link=
+-1921" title=3D"26 topics" style=3D"font-size: 22pt;">howto</a>
+<a href=3D"http://heuristically.wordpress.com/tag/interaction-client/" clas=
+s=3D"tag-link-23702210" title=3D"3 topics" style=3D"font-size: 11.716814159=
+292pt;">interaction client</a>
+<a href=3D"http://heuristically.wordpress.com/tag/interaction-scripter/" cl=
+ass=3D"tag-link-23654315" title=3D"1 topic" style=3D"font-size: 8pt;">inter=
+action scripter</a>
+<a href=3D"http://heuristically.wordpress.com/tag/interaction-supervisor/"=
+ class=3D"tag-link-23702211" title=3D"1 topic" style=3D"font-size: 8pt;">in=
+teraction supervisor</a>
+<a href=3D"http://heuristically.wordpress.com/tag/interactive-intelligence/=
+" class=3D"tag-link-13594166" title=3D"8 topics" style=3D"font-size: 16.053=
+097345133pt;">interactive intelligence</a>
+<a href=3D"http://heuristically.wordpress.com/tag/internet-explorer/" class=
+=3D"tag-link-1143" title=3D"1 topic" style=3D"font-size: 8pt;">internet exp=
+lorer</a>
+<a href=3D"http://heuristically.wordpress.com/tag/linux/" class=3D"tag-link=
+-610" title=3D"9 topics" style=3D"font-size: 16.672566371681pt;">linux</a>
+<a href=3D"http://heuristically.wordpress.com/tag/machine-learning/" class=
+=3D"tag-link-40978" title=3D"5 topics" style=3D"font-size: 13.946902654867p=
+t;">machine learning</a>
+<a href=3D"http://heuristically.wordpress.com/tag/macro/" class=3D"tag-link=
+-1625" title=3D"1 topic" style=3D"font-size: 8pt;">macro</a>
+<a href=3D"http://heuristically.wordpress.com/tag/microsoft/" class=3D"tag-=
+link-637" title=3D"4 topics" style=3D"font-size: 12.955752212389pt;">micros=
+oft</a>
+<a href=3D"http://heuristically.wordpress.com/tag/microsoft-windows/" class=
+=3D"tag-link-5496" title=3D"1 topic" style=3D"font-size: 8pt;">microsoft wi=
+ndows</a>
+<a href=3D"http://heuristically.wordpress.com/tag/optimization/" class=3D"t=
+ag-link-133147" title=3D"4 topics" style=3D"font-size: 12.955752212389pt;">=
+Optimization</a>
+<a href=3D"http://heuristically.wordpress.com/tag/outlook-2007/" class=3D"t=
+ag-link-505331" title=3D"1 topic" style=3D"font-size: 8pt;">outlook 2007</a>
+<a href=3D"http://heuristically.wordpress.com/tag/pedantic/" class=3D"tag-l=
+ink-1580917" title=3D"1 topic" style=3D"font-size: 8pt;">pedantic</a>
+<a href=3D"http://heuristically.wordpress.com/tag/quirks/" class=3D"tag-lin=
+k-29623" title=3D"6 topics" style=3D"font-size: 14.814159292035pt;">quirks<=
+/a>
+<a href=3D"http://heuristically.wordpress.com/tag/r/" class=3D"tag-link-101=
+89" title=3D"8 topics" style=3D"font-size: 16.053097345133pt;">r</a>
+<a href=3D"http://heuristically.wordpress.com/tag/r-project/" class=3D"tag-=
+link-7340438" title=3D"8 topics" style=3D"font-size: 16.053097345133pt;">r-=
+project</a>
+<a href=3D"http://heuristically.wordpress.com/tag/sas/" class=3D"tag-link-2=
+2267" title=3D"16 topics" style=3D"font-size: 19.522123893805pt;">sas</a>
+<a href=3D"http://heuristically.wordpress.com/tag/sql/" class=3D"tag-link-1=
+0346" title=3D"2 topics" style=3D"font-size: 10.230088495575pt;">sql</a>
+<a href=3D"http://heuristically.wordpress.com/tag/symon/" class=3D"tag-link=
+-1266698" title=3D"1 topic" style=3D"font-size: 8pt;">symon</a>
+<a href=3D"http://heuristically.wordpress.com/tag/text-mining/" class=3D"ta=
+g-link-186779" title=3D"1 topic" style=3D"font-size: 8pt;">text mining</a>
+<a href=3D"http://heuristically.wordpress.com/tag/tutorial/" class=3D"tag-l=
+ink-2932" title=3D"19 topics" style=3D"font-size: 20.389380530973pt;">tutor=
+ial</a>
+<a href=3D"http://heuristically.wordpress.com/tag/windows-xp/" class=3D"tag=
+-link-3146" title=3D"1 topic" style=3D"font-size: 8pt;">windows xp</a></div=
+></li>
+		<li id=3D"top-posts" class=3D"widget widget_stats_topposts">			<h2 class=
+=3D"widgettitle">Top Posts</h2>
+			<ul><li><a href=3D"http://heuristically.wordpress.com/2009/10/08/delete-=
+rows-from-r-data-frame/">Delete rows from R data frame </a></li><li><a href=
+=3D"http://heuristically.wordpress.com/2011/04/08/text-data-mining-twitter-=
+r/">Text Data Mining with Twitter and R</a></li><li><a href=3D"http://heuri=
+stically.wordpress.com/2010/11/11/zip-code-list-us-military-installations/"=
+>Zip code list of US military installations</a></li><li><a href=3D"http://h=
+euristically.wordpress.com/2010/12/17/kernel-panic-not-syncing-vfs-unable-t=
+o-mount-root-fs-on-unknown-block00/">Kernel panic - not syncing: VFS: Unabl=
+e to mount root fs on unknown-block(0,0)</a></li><li><a href=3D"http://heur=
+istically.wordpress.com/2011/09/01/list-of-counties-and-zip-codes-affected-=
+by-hurricane-irene/">List of counties and zip codes affected by Hurricane=
+ Irene</a></li></ul>		</li>
+<li id=3D"text-4" class=3D"widget widget_text"><h2 class=3D"widgettitle">Co=
+ntact</h2>
+			<div class=3D"textwidget">Contact me by posting on this blog or privatel=
+y via <a href=3D"http://heuristically.wordpress.com/contact">email</a></div>
+		</li>
+
+</ul>
+
+</div>
+
+
+<p class=3D"credit">Theme: <a href=3D"http://theme.wordpress.com/themes/blu=
+e-green/">Shocking Blue Green</a>. <a href=3D"http://wordpress.com/?ref=3Df=
+ooter" rel=3D"generator">Blog at WordPress.com</a>. </p>
+
+</div>
+
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-DD1E9DB5:http://edge.q=
+uantserve.com/quant.js"></script>
+<noscript><span><p><img class=3D"robots-nocontent" src=3D"<a href=3D"http:/=
+/pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=3Dlanguage.en%2Ctype=
+.wpcom%2Cposttag.howto%2Cposttag.machine-learning%2Cposttag.r%2Cposttag.r-p=
+roject%2Cposttag.tutorial">http://pixel.quantserve.com/pixel/p-18-mFEk4J448=
+M.gif?labels=3Dlanguage.en%2Ctype.wpcom%2Cposttag.howto%2Cposttag.machine-l=
+earning%2Cposttag.r%2Cposttag.r-project%2Cposttag.tutorial</a>" style=3D"di=
+splay:none" height=3D"1" width=3D"1" alt=3D"" /></p></span></noscript>
+	<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-B9A33D7C:http://s.grav=
+atar.com/js/gprofiles.js?y&amp;ver=3DMU"></script>
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-17694E59:http://s1.wp.=
+com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=3D1311367667g&am=
+p;ver=3DMU"></script>
+	<div style=3D"display:none">
+	</div>
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-E574C566:http://s2.wp.=
+com/wp-content/mu-plugins/highlander-comments/script.js?m=3D1312573109g&amp=
+;ver=3D20110804"></script>
+=20
+		<img ilo-full-src=3D"https://stats.wordpress.com/b.gif?v=3Danonymous_usag=
+e3&amp;c=3Dcy9weUZbd1E4WUdhU1ZaNXdTNmB5V3tvaXlYXSNEPEwtZjAqX3tfN0t7eyU4QyRy=
+SHoleDdsfGUpRGZTa1hXVV9uQnk/ZTpFTSpwTA=3D" src=3D"https://stats.wordpress.c=
+om/b.gif?v=3Danonymous_usage3&amp;c=3Dcy9weUZbd1E4WUdhU1ZaNXdTNmB5V3tvaXlYX=
+SNEPEwtZjAqX3tfN0t7eyU4QyRySHoleDdsfGUpRGZTa1hXVV9uQnk/ZTpFTSpwTA=3D" alt=
+=3D"" style=3D"display:none">
+		<script type=3D"text/javascript" src=3D"urn:snapshot-F97C955F:http://s2.w=
+p.com/wp-content/mu-plugins/post-react-2/sharing/sharing.js?m=3D1309923244g=
+&amp;ver=3D0.2"></script>
+	<script type=3D"text/javascript" charset=3D"utf-8"><!--
+/* Script removed by snapshot save */
+--></script>
+	<script type=3D"text/javascript" charset=3D"utf-8"><!--
+/* Script removed by snapshot save */
+--></script>
+	<div id=3D"sharing_email" style=3D"display: none;">
+		<form action=3D"" method=3D"post">
+			<label for=3D"target_email">Send to Email Address</label>
+			<input name=3D"target_email" id=3D"target_email" type=3D"text">
+		=09
+		=09
+				<label for=3D"source_name">Your Name</label>
+				<input name=3D"source_name" id=3D"source_name" type=3D"text">
+			=09
+				<label for=3D"source_email">Your Email Address</label>
+				<input name=3D"source_email" id=3D"source_email" type=3D"text">
+
+					=09
+			<div class=3D"recaptcha" id=3D"sharing_recaptcha"></div>
+			<img ilo-full-src=3D"http://heuristically.wordpress.com/wp-content/mu-pl=
+ugins/post-react-2/sharing/images/loading.gif" style=3D"float: right; displ=
+ay: none" class=3D"loading" src=3D"http://heuristically.wordpress.com/wp-co=
+ntent/mu-plugins/post-react-2/sharing/images/loading.gif" alt=3D"loading"=
+ height=3D"16" width=3D"16">
+			<input value=3D"Send Email" class=3D"sharing_send" type=3D"submit">
+			<a href=3D"#cancel" class=3D"sharing_cancel">Cancel</a>
+		=09
+			<div class=3D"errors errors-1" style=3D"display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class=3D"errors errors-2" style=3D"display: none;">
+				Email check failed, please try again			</div>
+		=09
+			<div class=3D"errors errors-3" style=3D"display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type=3D"text/javascript" src=3D"urn:snapshot-7A5AF0BF:http://b.scor=
+ecardresearch.com/beacon.js"></script><script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><noscript><span><p class=3D"robots-nocontent"><img src=3D"<a hr=
+ef=3D"http://b.scorecardresearch.com/p?cj=3D1c1=3D2&#038;c2=3D7518284">http=
+://b.scorecardresearch.com/p?cj=3D1c1=3D2&#038;c2=3D7518284</a>" alt=3D""=
+ style=3D"display:none" width=3D"1" height=3D"1" /></p></span></noscript><s=
+cript type=3D"text/javascript" src=3D"urn:snapshot-5BEB36C1:http://s1.wp.co=
+m/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shCore.js?=
+m=3D1306912000g&amp;ver=3D2.1.364b"></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-E4BD00D0:http://s0.wp.=
+com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shBrushP=
+lain.js?m=3D1306912000g&amp;ver=3D2.1.364b"></script>
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script src=3D"urn:snapshot-108700AB:http://s.stats.wordpress.com/w.js?20"=
+ type=3D"text/javascript"></script>
+<script type=3D"text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><img ilo-full-src=3D"http://stats.wordpress.com/g.gif?host=3Dhe=
+uristically.wordpress.com&amp;rand=3D0.38691947618023503&amp;blog=3D8820363=
+&amp;v=3Dwpcom&amp;user_id=3D0&amp;post=3D151&amp;subd=3Dheuristically&amp;=
+ref=3D" id=3D"wpstats" src=3D"http://stats.wordpress.com/g.gif?host=3Dheuri=
+stically.wordpress.com&amp;rand=3D0.38691947618023503&amp;blog=3D8820363&am=
+p;v=3Dwpcom&amp;user_id=3D0&amp;post=3D151&amp;subd=3Dheuristically&amp;ref=
+=3D" alt=3D""><img ilo-full-src=3D"http://stats.wordpress.com/g.gif?v=3Dwpc=
+om2&amp;rand=3D0.3421684023714392&amp;crypt=3DUE5XaFBLcG9HLE5XPUhlbC8mTGtZT=
+EljbjFHaG1sLDROVSxLK11GJlFlbHF1Vz9jX3dNRHVVZjZBb05XY1c2OGJRSk43PWRlSi89TVNx=
+UlEsayVWbmlZVmR2Mn5CUWwvazExLzdXYyVzZFkyJjRCOE5JR3lOdWg/UyY9JmtHY2xFeiYvVHV=
+YR3RMQzc2XWdaM1kwMCtkT0NsdUYwLXxva3hYZFFYZENkeGgvQ21XcUViTFpNfC9sXUxGSSwuWV=
+NaYjMrMWRZbnx5MWFBSTY4PVE9Jkt5WnhdP35EdiVJaDlaMzR3d0hxcSVHMmxpc01GLDNoVjlWJ=
+WlrY01teGVVYnEsdzFsbTZMJlkuSHlSRHYyUVJpYi9LSC0%3D" id=3D"wpstats2" src=3D"h=
+ttp://stats.wordpress.com/g.gif?v=3Dwpcom2&amp;rand=3D0.3421684023714392&am=
+p;crypt=3DUE5XaFBLcG9HLE5XPUhlbC8mTGtZTEljbjFHaG1sLDROVSxLK11GJlFlbHF1Vz9jX=
+3dNRHVVZjZBb05XY1c2OGJRSk43PWRlSi89TVNxUlEsayVWbmlZVmR2Mn5CUWwvazExLzdXYyVz=
+ZFkyJjRCOE5JR3lOdWg/UyY9JmtHY2xFeiYvVHVYR3RMQzc2XWdaM1kwMCtkT0NsdUYwLXxva3h=
+YZFFYZENkeGgvQ21XcUViTFpNfC9sXUxGSSwuWVNaYjMrMWRZbnx5MWFBSTY4PVE9Jkt5WnhdP3=
+5EdiVJaDlaMzR3d0hxcSVHMmxpc01GLDNoVjlWJWlrY01teGVVYnEsdzFsbTZMJlkuSHlSRHYyU=
+VJpYi9LSC0%3D" alt=3D"" style=3D"display:none">
+<noscript><span><img src=3D"<a href=3D"http://stats.wordpress.com/b.gif?v=
+=3Dnoscript">http://stats.wordpress.com/b.gif?v=3Dnoscript</a>" style=3D"he=
+ight:0px;width:0px;overflow:hidden" alt=3D"" /></span></noscript>
+
+
+<div style=3D"bottom: auto; left: 481px; right: auto; top: 442px; display:=
+ none;" class=3D"translator-theme-default" id=3D"translator-floating-panel"=
+><div title=3D"Click to translate" id=3D"translator-floating-panel-button">=
+</div></div></body></html>
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://ecopressed.files.wordpress.com/2011/09/picture-2-1314851804.png?w=126&h=78&crop=true
+
+iVBORw0KGgoAAAANSUhEUgAAAH4AAABOCAYAAADmWaIlAAAPLmlDQ1BpY20AAHiclZcJNJTvGsDf
+2WeMPXtoQmTNvmRfIvu+kxiDsYwxdrIraREVhaiQZCkVFVkSKYWKsqTIUiQpRMl2v6H+/3vu/9xz
+z33Pmfl+3/M+y/u9z8z3vA8AbPyeVGogHAAQRAmj2RjpEZycXQiYIQADcEAXi3kSQ6m6VlZm4L+O
+pT5IGxq90nRf29UEIiWwhl4sfjdTeozQvP/dbnMw06CAAMCkIObw3WIdOnttsR2dI8OoYRD70Zno
+5+kN8SGIpWh2NvoQl9H9+G7xPTp7bfETOkcQfem2AwCg2SneZAoAmBmItbxJoURomh7X2zuUGARx
+JgBwraCgYMg/6wtIvptIpUG2rD8hFqHvy9aS/b0AUNGGfDb/LSMaA3AnEPL9+G+ZuCQA7MEAdFz8
+W7Zgs7lXMK7noT4K8psiGKMeAKjhjY0FUcj+NABrWRsbK0UbG2vFACDeAvAgkBhOi/i9XzBYFxTt
+f9xvPfPvgYAC0jPJB1xBI0wJdh9+ACGA+I4cRU2g17DyOBpDMyOB6SwLB2shu8K2V5xR3KI8Q3w5
+/FaCrDue78wSttyFFW3ZHSLBL9kk7SLzUTZQ7r2CmeIVpXkVFVWqWsneVxoIzT1aDtoJOmW6L/VW
+DET2WRpGGF3Y32w8ago322GuYeFgSbU6Yp1vc922ya7TftBhwvGL05LzuivSDe/OemCbB+dBTk8O
+LxYizhvm/YM04/Pet9fvEfmuf1nA+cC0oHAKMdiKqh4iTEPTJkLrw9LD7SOEI+YjW6Oyo0kxyrGo
+2FeHiuKo8RoJmITexMIkv2T55JWU1tTjh22P8B0ZTbt6lJKudmzbcdwJyZPRGR8yjbJOnC4+c/Fs
+ZnZsju85m/MauWJ5rHnL+WMXOgvqC29dvH+p7/JSMXvJzitCpbxXGa4ul01d6ytvraiuLKhKvx52
+w6va8abzreDb+TU9dxB3he7tqZOuF73P38DaiGxcbpptnn6w8JCtVbuN+ii7/eLj00/iOvyfuj+z
+77TsMuiWfc70/O2LgpcePbt6vvXef5X62qyPs2+iv34gezDkjdnQrqHlt63vkofVh+dGrrx3HWUf
+7RrLHHecEJr4+qHhY/qk/dTOqS+faqejP6t+Xpi5+sVtln2282vaN4M52FzjfNyC4XfBRc4luR8e
+PzOWq381rzxcbVvrXh/b2IDyzwXMQAEMC0uEM8NrECFIfZQImgcjiFXBeTJk4/uYRJjjWcbYTNnv
+c6hy3uZW42niM9r+QsBZcJTgvXNK2E9kRNRGrE5cUCJM8oE0QkZ1j5dsilyB/C2FVsUepffKMyo/
+1eB7GdTZNHg0BbQI2iI64royeor6Gga6+wwNTY3M91sYW5pYmJqZGZvrW2haKltJW4vYcNvibdfs
+vtqPOHQ7NjqVO59zSXGluDm56x4Q92D1WDw46NngVUCM83Yj7fXh8Vn0felXST7qTwzQCOQMnA16
+RMkPplJ1Q5hDBmhFoeSwPWHfw+si4iJ1opBRj6PTY0xi8bGdh07EmcUzxnclZCW6J8knsyYvprxN
+bTtccSQrLeKoS7rWMaHjqOOTJ56erMg4eSo40y5L67T0GcJZrmyG7PWcr+dGzj/PbcqrzM+7cLQg
+rNDzovmlvZd3FwkU85YIXpEsVbtqUGZ6zaLcssKi0rzK9LrJDeNq05t2t8i3j9ZU1nbeGb47eW+6
+brZ+8f56I7aJvVnggXiL0kOdVqM2k0dG7TqPlZ+Idwg+5XjG1InpgnWtdv94vvBi7uVcz1zv7KvJ
+12/7uvsfDNweLHtTMHTm7dF3ccOhI/7vSaM+Y5Tx6InUDxkfz07mTl38VDJd/rl6pvZLw2zH14k5
+wfn4hV+LZ34o/Hz5i7TyZc1lvWYz/9uAPjgGpmCOsH64P4IF0YHMRgWjHTAWWDucN0MqvoLxDTM3
+izPrRbav27Q4cji/cBvzXOED2x35qwQRO2wJ+TvfCwuJ2O1KFL0sVre7XbxDolXyjtQV6SyZ2D0+
+stZymvKSCtyKCMVZpX7lBypXVU+ohey1U1fW4NJY0nytdVv7tE6IrrWegj6H/neD3n03DU8ZBe7f
+byxkvGry2rTKLNXcxULWEmU5aFVlnWRjaytiu2jXZn/Wgego67jm1OGc7XLQVcJ13q3ePfmAsQeL
+x6uDuZ7uXgSvcWKptx9JnDTtU+4b4CfhN0Uu9fcO2BkwHJgXZE9hoTwJTqKqUD+HFNDMaWuhFWEu
+4Zjw2givSObI+1E+0WzRDTE+sayxdYeIcfi4mni3BFxCXWJwklzScnJ7Sk6q32G1I7gjg2nXjkan
+Gx3jPDZ+/OaJuJMmGVwZ46duZqZkuZ5WOcN5Zulsf/bdnHPnIs/b5yrkseRN5jdcOFXgW2h0UeGS
+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
+VRe2AAAAAElFTkSuQmCC
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://stats.wordpress.com/b.gif?v=anonymous_usage3&c=cy9weUZbd1E4WUdhU1ZaNXdTNmB5V3tvaXlYXSNEPEwtZjAqX3tfN0t7eyU4QyRySHoleDdsfGUpRGZTa1hXVV9uQnk/ZTpFTSpwTA=
+
+R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://heuristically.wordpress.com/wp-content/mu-plugins/post-react-2/sharing/images/loading.gif
+
+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
+ISADghsLBDEhIwRfGyMWGA8NXBEAOw==
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://stats.wordpress.com/g.gif?host=heuristically.wordpress.com&rand=0.38691947618023503&blog=8820363&v=wpcom&user_id=0&post=151&subd=heuristically&ref=
+
+R0lGODlhBgAFAIABAAAAAP///yH5BAEAAAEALAAAAAAGAAUAAAIJDGJ4ic1qgAwFADs=
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://stats.wordpress.com/g.gif?v=wpcom2&rand=0.3421684023714392&crypt=UE5XaFBLcG9HLE5XPUhlbC8mTGtZTEljbjFHaG1sLDROVSxLK11GJlFlbHF1Vz9jX3dNRHVVZjZBb05XY1c2OGJRSk43PWRlSi89TVNxUlEsayVWbmlZVmR2Mn5CUWwvazExLzdXYyVzZFkyJjRCOE5JR3lOdWg/UyY9JmtHY2xFeiYvVHVYR3RMQzc2XWdaM1kwMCtkT0NsdUYwLXxva3hYZFFYZENkeGgvQ21XcUViTFpNfC9sXUxGSSwuWVNaYjMrMWRZbnx5MWFBSTY4PVE9Jkt5WnhdP35EdiVJaDlaMzR3d0hxcSVHMmxpc01GLDNoVjlWJWlrY01teGVVYnEsdzFsbTZMJlkuSHlSRHYyUVJpYi9LSC0%3D
+
+R0lGODlhBgAFAIABAAAAAP///yH5BAEAAAEALAAAAAAGAAUAAAIJDGJ4ic1qgAwFADs=
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-13B8023A:http://s0.wp.com/wp-content/themes/h4/global.css?m=1313012185g
+
+/* Effective stylesheet produced by snapshot save */
+img.latex { border: medium none; vertical-align: middle; }
+.video-player { border: 0pt none; margin: auto; padding: 5px; text-align:=
+ center; }
+.wpvidavee_title { font-family: Tahoma,Arial,sans-serif; font-size: 10px;=
+ font-weight: bold; line-height: 12px; padding: 2px 5px; text-align: left; }
+.wpvidavee_footer { font-family: Tahoma,Arial,sans-serif; font-size: 9px;=
+ line-height: 11px; padding: 2px 5px; text-align: right; }
+.wpvidavee_footer a { text-decoration: none; }
+.wpvidavee_p { color: red; }
+.hidden { display: none; }
+.possibly-related { clear: both; }
+.screen-reader-text { position: absolute; left: -1000em; }
+.comment object, .comment embed, .embed-vimeo iframe, .embed-youtube iframe=
+ { max-width: 100%; }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-C9947AF7:http://s2.wp.com/wp-content/mu-plugins/post-react-2/style.css?m=1314297785g&ver=3
+
+/* Effective stylesheet produced by snapshot save */
+div.sharedaddy ul, div.sharedaddy li { margin: 0pt; padding: 0pt; list-styl=
+e: none outside none; border: medium none; }
+div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy { font-family=
+: 'Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 12px; clear: both=
+; }
+div.sharedaddy, div.sharedaddy div { border-radius: 0pt 0pt 0pt 0pt ! impor=
+tant; }
+div.sharedaddy h3, #content div.sharedaddy h3, #main div.sharedaddy h3, #pr=
+imary div.sharedaddy h3 { font-size: 12px; font-family: 'Helvetica Neue',He=
+lvetica,Arial,sans-serif; margin: 3px 0pt; padding: 0pt; text-transform: no=
+ne; letter-spacing: 0pt; line-height: 1; font-weight: bold; width: 15.625%;=
+ float: left; position: static; background: none repeat scroll 0% 0% transp=
+arent; border: medium none; }
+.rtl div.sharedaddy h3, .rtl #content div.sharedaddy h3, .rtl #main div.sha=
+redaddy h3, .rtl #primary div.sharedaddy h3 { float: right; text-align: rig=
+ht; }
+div.sharedaddy ul, div.sharedaddy li { margin: 0pt ! important; padding: 0p=
+t ! important; text-indent: 0pt; }
+div.sharedaddy li:before { content: ""; }
+div.sharedaddy div.sharing-clear { margin: 0pt ! important; padding: 0pt !=
+ important; }
+div.sharedaddy div.pd-rating { margin: 0pt; min-height: 23px; }
+div.sharedaddy a, div.sharedaddy a:link, div.sharedaddy a:visited { font-st=
+yle: normal; }
+div.sharedaddy:before, div.sharedaddy:after, div.sharedaddy .sd-block:befor=
+e, div.sharedaddy .sd-block:after, div.sharedaddy ul:before, div.sharedaddy=
+ ul:after { content: " "; display: block; height: 0pt; overflow: hidden; }
+div.sharedaddy:after, div.sharedaddy .sd-block:after, div.sharedaddy ul:aft=
+er { clear: both; }
+div.sharedaddy, div.sharedaddy .sd-block, div.sharedaddy ul {  }
+div.sharedaddy div.sd-block { border-top: 1px solid rgba(0, 0, 0, 0.13); pa=
+dding: 10px 0pt 5px; margin: 0pt; width: 100% ! important; }
+div.sharedaddy.sharedaddy-dark .sd-block { border-top-color: rgba(50, 50,=
+ 50, 0.5); }
+div.sharedaddy .sd-content { width: 82.125%; float: right; margin: 0pt; }
+.rtl div.sharedaddy .sd-content { float: right; }
+div.sharedaddy .sd-content ul { margin: 0pt; }
+div.sharedaddy .sd-content li { float: left; margin: 0pt 5px 5px 0pt ! impo=
+rtant; display: block; }
+.rtl div.sharedaddy .sd-content li { float: right; margin: 0pt 0pt 5px 5px=
+ ! important; }
+div.sharedaddy a.sd-button { margin: 0pt; padding: 0pt; display: block; bac=
+kground: -moz-linear-gradient(center top , rgb(247, 247, 247) 0%, rgb(239,=
+ 239, 239) 100%) repeat scroll 0% 0% transparent; border-radius: 3px 3px 3p=
+x 3px; border: 1px solid rgb(221, 221, 221) ! important; box-shadow: 0pt 1p=
+x 0pt rgb(255, 255, 255) inset; color: rgb(0, 0, 0) ! important; text-decor=
+ation: none; line-height: 1; font-size: 12px; font-family: 'Helvetica Neue'=
+,Helvetica,Arial,sans-serif; font-weight: normal; }
+div.sharedaddy a.sd-button:hover { color: rgb(0, 0, 0); text-shadow: 0pt 1p=
+x 0pt rgb(255, 255, 255); border-color: rgb(204, 204, 204); background: -mo=
+z-linear-gradient(center top , rgb(239, 239, 239) 0%, rgb(238, 238, 238) 10=
+0%) repeat scroll 0% 0% transparent; }
+div.sharedaddy a.sd-button:active { background-color: rgb(239, 239, 239);=
+ box-shadow: 0pt -1px 0pt rgb(255, 255, 255) inset; border-color: rgb(221,=
+ 221, 221); }
+a.sd-button span { padding: 4px 8px; display: block; opacity: 0.8; line-hei=
+ght: 1; text-shadow: none; }
+a.sd-button:hover span { opacity: 1; }
+.sd-social-icon-text a.sd-button span, a.sd-button span { padding: 3px 5px=
+ 3px 23px; background-position: 2px center; background-repeat: no-repeat;=
+ }
+.rtl .sd-social-icon-text a.sd-button span, .rtl a.sd-button span { padding=
+: 3px 23px 3px 5px; background-position: 98% center; }
+.sd-social-icon a.sd-button span { padding: 3px; width: 16px; height: 16px;=
+ text-indent: -9999px; background-position: center center; background-repea=
+t: no-repeat; }
+.sd-social-text a.sd-button span { background: none repeat scroll 0% 0% tra=
+nsparent ! important; padding-left: 5px; }
+.rtl .sd-social-text a.sd-button span { padding-left: 0pt; padding-right:=
+ 5px; }
+.sd-social-official li { height: 21px; }
+div.sharedaddy .no-text { width: 21px; height: 21px; }
+div.sharedaddy .no-text a { text-decoration: none; }
+div.sharedaddy .no-icon a span, div.sharedaddy li.no-icon div a span { padd=
+ing-left: 5px; background-image: none; }
+.rtl div.sharedaddy .no-icon a span, .rtl div.sharedaddy li.no-icon div a=
+ span { padding-left: 0pt; padding-right: 5px; }
+li.share-facebook a.sd-button span { background-image: url("urn:not-availab=
+le:http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-=
+facebook.png"); }
+li.share-twitter a.sd-button span { background-image: url("urn:not-availabl=
+e:http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-t=
+witter.png"); }
+li.share-linkedin a.sd-button span { background-image: url("urn:not-availab=
+le:http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-=
+linkedin.png"); }
+li.share-press-this a.sd-button span { background-image: url("urn:not-avail=
+able:http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/ico=
+n-wordpress.png"); }
+li.share-digg a.sd-button span { background-image: url("urn:not-available:h=
+ttp://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-digg=
+.png"); }
+li.share-stumbleupon a.sd-button span { background-image: url("urn:not-avai=
+lable:http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/ic=
+on-stumbleupon.png"); }
+li.share-reddit a.sd-button span { background-image: url("urn:not-available=
+:http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-re=
+ddit.png"); }
+li.share-email a.sd-button span { background-image: url("urn:not-available:=
+http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-ema=
+il.png"); }
+li.share-print a.sd-button span { background-image: url("urn:not-available:=
+http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-pri=
+nt.png"); }
+a.sd-button.share-more span { background-image: url("urn:not-available:http=
+://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/images/icon-more.pn=
+g"); }
+div.sharedaddy .sd-content ul li.share-google-plus-1 { padding-top: 3px !=
+ important; }
+div.sharedaddy .sd-social-official .sd-content ul li.share-google-plus-1 {=
+ padding-top: 0pt; }
+div.sharedaddy .sharing-hidden .inner { max-width: 250px; padding: 15px 15p=
+x 10px; position: absolute; margin-left: -100px; z-index: 1001; background-=
+color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); border-rad=
+ius: 3px 3px 3px 3px ! important; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2=
+); }
+.rtl div.sharedaddy .sharing-hidden .inner { margin-left: 0pt; margin-right=
+: -100px; }
+div.sharedaddy.sharedaddy-dark .sharing-hidden .inner { border-color: rgb(3=
+4, 34, 34); }
+div.sharedaddy #wpl-likebox, #main div.sharedaddy #wpl-likebox, #content di=
+v.sharedaddy #wpl-likebox { margin-right: 0pt ! important; margin-left: 0pt=
+ ! important; padding-right: 0pt ! important; padding-left: 0pt ! important=
+; }
+#wpl-likebox .sd-content { margin: 0pt; }
+div.sharedaddy #wpl-button { float: left; margin: 0pt 5px 0pt 0pt; }
+.rtl div.sharedaddy #wpl-button { float: right; margin: 0pt 0pt 0pt 5px; }
+div.sharedaddy #wpl-count { line-height: 1; padding: 5px 0pt; text-align:=
+ left; margin: 0pt; font-size: 12px; }
+.rtl div.sharedaddy #wpl-count { text-align: right; }
+div.sharedaddy ul#wpl-avatars, #wpl-likebox { margin: 0pt -2px 0pt 0pt ! im=
+portant; padding-top: 10px ! important; overflow: hidden; }
+.rtl div.sharedaddy ul#wpl-avatars, .rtl #wpl-likebox { margin: 0pt 0pt 0pt=
+ -2px ! important; }
+div.sharedaddy ul#wpl-avatars li { width: 32px; height: 32px; }
+div.sharedaddy ul#wpl-avatars li a { margin: 0pt 2px 0pt 0pt; border-bottom=
+: medium none ! important; }
+div.sharedaddy ul#wpl-avatars li a img { background: none repeat scroll 0%=
+ 0% transparent; border: medium none; margin: 0pt ! important; padding: 0pt=
+ ! important; position: static; }
+div.sharedaddy #wpl-button a.sd-button span { padding: 3px 5px 3px 20px; te=
+xt-shadow: none; background: url("urn:not-available:http://s2.wp.com/wp-con=
+tent/mu-plugins/post-react-2/like/images/icon-like.png?2") no-repeat scroll=
+ 2px center transparent; }
+.rtl div.sharedaddy #wpl-button a.sd-button span { padding: 3px 20px 3px 5p=
+x; background-position: 38px center; }
+div.sharedaddy #wpl-button a.sd-button.liked { background: none repeat scro=
+ll 0% 0% rgb(254, 255, 206); border: 1px solid rgb(243, 227, 137); box-shad=
+ow: 0pt 1px 0pt rgb(255, 255, 255) inset; cursor: default; }
+div.sharedaddy #wpl-button a.sd-button.liked span { opacity: 1; }
+#wpl-mustlogin { width: 312px; padding: 15px; position: absolute; margin-le=
+ft: -120px; z-index: 1001; text-shadow: none; background-color: rgb(255, 25=
+5, 255); color: rgb(51, 51, 51); border: 1px solid rgb(204, 204, 204); bord=
+er-radius: 3px 3px 3px 3px; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); }
+.rtl #wpl-mustlogin { margin-left: 0pt; margin-right: -120px; }
+#wpl-mustlogin p { margin: 0pt; text-shadow: none; color: rgb(51, 51, 51); }
+#wpl-mustlogin label, #wpl-mustlogin a { text-shadow: none; color: rgb(51,=
+ 51, 51); }
+#wpl-mustlogin input[type=3D"text"], #wpl-mustlogin input[type=3D"password"=
+] { width: 98.5%; text-shadow: none; border: 1px solid rgb(204, 204, 204);=
+ background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(51, 51=
+, 51); }
+#wpl-mustlogin { line-height: 14px ! important; font-size: 11px; clear: lef=
+t; margin-top: 5px; background: none repeat scroll 0% 0% rgb(240, 240, 240)=
+; padding: 10px; border-radius: 3px 3px 3px 3px; }
+.rtl #wpl-mustlogin { clear: right; }
+#wpl-mustlogin p { margin: 5px 0pt; padding: 0pt; }
+#wpl-mustlogin input.input { padding: 2px; background: none repeat scroll=
+ 0% 0% rgb(255, 255, 255); font-size: 11px; font-family: inherit; border:=
+ 1px solid rgb(204, 204, 204); box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1)=
+ inset; line-height: 12px; }
+#wpl-mustlogin input#wp-submit { border: 1px solid rgb(204, 204, 204); font=
+-size: 11px; background: none repeat scroll 0% 0% rgb(250, 250, 250); borde=
+r-radius: 3px 3px 3px 3px; padding: 2px 4px ! important; line-height: 12px;=
+ }
+#wpl-mustlogin label { position: relative; cursor: text; }
+#wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; paddin=
+g: 0pt ! important; }
+.rtl #wpl-mustlogin label span { left: auto; right: 5px; }
+#wpl-mustlogin label span {  }
+div.sharedaddy.sd-like-enabled .sd-like h3 { display: none; }
+div.sharedaddy.sd-like-enabled .sd-like div.sd-content { width: 100%; float=
+: none; }
+div.sharedaddy.sd-rating-enabled .sd-like h3 { display: block; }
+div.sharedaddy.sd-rating-enabled .sd-like div.sd-content { width: 82.125%;=
+ float: right; }
+.rtl div.sharedaddy.sd-rating-enabled .sd-like div.sd-content { float: left=
+; }
+div.sharedaddy.sd-sharing-enabled .sd-like h3 { display: block; }
+div.sharedaddy.sd-sharing-enabled .sd-like div.sd-content { width: 82.125%;=
+ float: right; }
+.rtl div.sharedaddy.sd-sharing-enabled .sd-like div.sd-content { float: lef=
+t; }
+#sharing_email { width: 312px; padding: 15px; position: absolute; margin-le=
+ft: -120px; z-index: 1001; background-color: rgb(255, 255, 255); border: 1p=
+x solid rgb(204, 204, 204); border-radius: 3px 3px 3px 3px; box-shadow: 0px=
+ 2px 8px rgba(0, 0, 0, 0.2); text-align: left; }
+.rtl #sharing_email { margin-left: 0px; margin-right: -120px; text-align:=
+ right; }
+div.sharedaddy.sharedaddy-dark #sharing_email { border-color: rgb(255, 255,=
+ 255); }
+#sharing_email .errors { color: rgb(255, 255, 255); background-color: rgb(1=
+19, 26, 9); font-size: 11px; padding: 5px 8px; line-height: 11px; margin:=
+ 10px 0pt 0pt; }
+#sharing_email label { font-size: 11px; color: rgb(51, 51, 51); font-weight=
+: bold; display: block; padding: 0pt 0pt 4px; text-align: left; text-shadow=
+: none; }
+.rtl #sharing_email label { text-align: right; }
+#sharing_email input[type=3D"text"] { width: 98.5%; margin-bottom: 12px; bo=
+rder: 1px solid rgb(204, 204, 204); background: none repeat scroll 0% 0% rg=
+b(255, 255, 255); }
+#sharing_email .sharing_send {  }
+#sharing_email .sharing_cancel { padding: 0pt 0pt 0pt 10px; font-size: 11px=
+; text-shadow: none; }
+.rtl #sharing_email .sharing_cancel { padding: 0pt 10px 0pt 0pt; }
+#sharing_email .recaptcha { width: 312px; height: 123px; margin: 10px 0pt=
+ 14px; }
+div.sharedaddy #wpl-likebox { position: static ! important; bottom: auto !=
+ important; }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-A8298CC1:http://s1.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1309455918g&ver=20110620
+
+/* Effective stylesheet produced by snapshot save */
+#respond { font-weight: normal; color: inherit; margin: 0pt 0pt 15px; font-=
+family: Arial,Helvetica,Tahoma,Verdana,sans-serif; clear: both; padding: 15=
+px 0pt; background: none repeat scroll 0% 0% transparent; border: medium no=
+ne; float: none; width: auto; overflow: hidden; }
+div#respond { border: medium none; }
+#respond form * { font-size: 12px; }
+#respond form { margin: 0pt; padding: 0pt; border: medium none; background:=
+ none repeat scroll 0% 0% rgba(0, 0, 0, 0.08); width: auto ! important; tex=
+t-align: left; }
+#respond h3 { padding-top: 0pt; padding-bottom: 0pt; margin-top: 15px; marg=
+in-bottom: 15px; display: block; }
+#respond h3 small { float: right; }
+#respond h3 small a { display: inline; width: auto; }
+#respond .comment-textarea { position: relative; }
+#respond .comment-textarea label { display: none; font-size: 14px; text-tra=
+nsform: none; color: rgba(0, 0, 0, 0.5); font-weight: normal; width: auto;=
+ margin: 0pt; line-height: 1; }
+#respond.js .comment-textarea label { display: block; position: absolute;=
+ top: 12px; left: 12px; }
+#respond #comment-form-comment, #comment-form-share-text-padder { line-heig=
+ht: 18px ! important; padding: 10px 10px 5px ! important; box-shadow: 1px=
+ 1px 2px rgba(0, 0, 0, 0.12) inset; background: none repeat scroll 0% 0% rg=
+ba(255, 255, 255, 0.85); border: 1px solid rgba(0, 0, 0, 0.2); -moz-transit=
+ion-duration: 0.3s; }
+#respond #comment-form-comment.active, #comment-form-share-text-padder.acti=
+ve { background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.95); border=
+: 1px solid rgba(0, 0, 0, 0.3); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2)=
+ inset; -moz-transition-duration: 0.3s; }
+#respond #comment-form-comment textarea, #comment-form-share-text-padder te=
+xtarea { border: medium none ! important; background: none repeat scroll 0%=
+ 0% transparent ! important; font-size: 14px; font-family: inherit; color:=
+ rgba(0, 0, 0, 0.7); text-shadow: 0pt 1px 0pt rgba(255, 255, 255, 0.45); wi=
+dth: 100%; height: 125px; outline: medium none; padding: 0pt; margin: 0pt;=
+ box-shadow: none; }
+#respond #comment-form-comment textarea:focus, #comment-form-share-text-pad=
+der textarea:focus { border: medium none; background: none repeat scroll 0%=
+ 0% transparent; padding: 0pt; margin: 0pt; box-shadow: none; }
+#respond #comment-form-identity { background: none repeat scroll 0% 0% rgba=
+(0, 0, 0, 0.03); border-top: 1px solid rgba(255, 255, 255, 0.35); overflow:=
+ hidden; }
+#respond #comment-form-identity #comment-form-nascar { display: none; overf=
+low: hidden; white-space: nowrap; }
+#respond.js #comment-form-identity #comment-form-nascar { display: block;=
+ }
+#respond #comment-form-identity #comment-form-nascar ul { margin: 5px 7px=
+ 0pt; padding: 0pt; list-style: none outside none; float: left; text-indent=
+: 0pt; }
+#respond #comment-form-identity #comment-form-nascar ul li { clear: none;=
+ float: left; margin: 0pt; padding: 5px ! important; background: none repea=
+t scroll 0% 0% transparent; border: medium none ! important; list-style: no=
+ne outside none; border-radius: 0pt 0pt 0pt 0pt; min-height: 0pt; width: au=
+to; }
+#respond #comment-form-identity #comment-form-nascar ul li:before, #respond=
+ #comment-form-identity #comment-form-nascar ul li:before { content: normal=
+; }
+#respond #comment-form-nascar ul li a { display: block; overflow: hidden;=
+ height: 24px; border: medium none ! important; font-style: normal; }
+#respond #comment-form-identity #comment-form-nascar ul li.selected { backg=
+round: none repeat scroll 0% 0% rgba(255, 255, 255, 0.7); box-shadow: 0pt=
+ 0pt 5px rgba(0, 0, 0, 0.1); }
+#respond #comment-form-identity #comment-form-nascar ul li.selected + li {=
+ border-left: medium none; }
+#respond .comment-form-padder { position: relative; padding: 0pt 12px; }
+#respond .comment-form-service { background: none repeat scroll 0% 0% rgba(=
+255, 255, 255, 0.7); padding: 10px 0pt; overflow: hidden; display: none; bo=
+rder-bottom: 1px solid rgba(0, 0, 0, 0.07); }
+#respond .comment-form-service * { line-height: 18px ! important; }
+#respond .selected { display: block; }
+#respond .comment-form-service p { margin: 10px 0pt 3px; padding: 0pt; clea=
+r: none ! important; border: medium none; }
+#respond .comment-form-avatar { float: left; }
+#respond .comment-form-avatar img { padding: 1px; border: 1px solid rgb(204=
+, 204, 204); background: none repeat scroll 0% 0% rgb(255, 255, 255); width=
+: 25px; vertical-align: middle; }
+#respond .no-border img { border: medium none; background: none repeat scro=
+ll 0% 0% transparent; }
+#respond .comment-form-fields { margin-left: 38px; margin-top: 0pt; }
+#respond div.comment-form-field { border: medium none; font-size: 12px; }
+#respond .comment-form-fields div.comment-form-field { position: relative;=
+ margin: 2px 15px 5px 0pt; clear: none; width: auto; }
+#respond .comment-form-fields label { position: relative; font-size: 12px;=
+ font-weight: normal; padding: 0pt; z-index: 99; width: 100%; cursor: text;=
+ background: none repeat scroll 0% 0% transparent; box-shadow: none; text-t=
+ransform: none; color: rgba(0, 0, 0, 0.5); margin: 0pt; }
+#respond.js .comment-form-fields label { position: absolute; top: 5px; left=
+: 8px; padding: 0pt ! important; }
+#respond .comment-form-fields label span.required, #respond .comment-form-f=
+ields label span.nopublish { position: relative; width: auto; top: auto; le=
+ft: auto; font-size: 11px; color: rgba(0, 0, 0, 0.4); margin: 0pt; backgrou=
+nd-color: transparent; }
+#respond .comment-form-fields label span.nopublish { float: right; }
+#respond.js .comment-form-fields label span.nopublish { position: absolute;=
+ float: none; right: 15px; }
+#respond .comment-form-fields div.comment-form-input { padding: 4px 5px; ma=
+rgin: 0pt 0pt 8px; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; backgr=
+ound: none repeat scroll 0% 0% rgba(255, 255, 255, 0.9); border: 1px solid=
+ rgb(205, 205, 205); white-space: nowrap; -moz-transition-duration: 0.3s;=
+ height: 18px ! important; width: 100% ! important; }
+#respond .comment-form-fields div.comment-form-input.active { background:=
+ none repeat scroll 0% 0% rgba(255, 255, 255, 0.95); border: 1px solid rgba=
+(0, 0, 0, 0.3); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) inset; -moz-tran=
+sition-duration: 0.3s; }
+#respond .comment-form-fields div.comment-form-input input { border: medium=
+ none ! important; line-height: 18px ! important; outline: medium none; wid=
+th: 100% ! important; font-size: 12px ! important; font-family: inherit; pa=
+dding: 0pt ! important; margin: 0pt ! important; background: none repeat sc=
+roll 0% 0% transparent ! important; float: none; box-shadow: none; color:=
+ rgba(0, 0, 0, 0.7); text-indent: 0px; }
+#respond .comment-form-fields div.comment-form-input input:focus { border:=
+ medium none; background: none repeat scroll 0% 0% transparent; padding: 0p=
+t; margin: 0pt; box-shadow: none; }
+#respond .comment-form-fields h5 { clear: none; font-size: 18px; margin: 0p=
+t ! important; padding: 5px 0pt ! important; font-family: inherit; font-wei=
+ght: bold; text-transform: none; font-style: normal; }
+#respond .comment-form-fields p.comment-form-posting-as, #respond .comment-=
+form-fields p.comment-form-log-out { color: rgba(0, 0, 0, 0.7); margin: 0pt=
+; padding-top: 5px; }
+#respond .comment-form-fields p.comment-form-log-out { margin: 0pt ! import=
+ant; }
+#respond .comment-form-service a { color: rgba(0, 0, 0, 0.6); text-decorati=
+on: underline; }
+#respond #comment-form-post-to { position: relative; background: none repea=
+t scroll 0% 0% rgba(255, 255, 255, 0.35); border-top: 1px solid rgba(255,=
+ 255, 255, 0.8); border-bottom: 1px solid rgba(0, 0, 0, 0.05); padding: 10p=
+x 0pt 6px; }
+#respond #comment-form-post-to p { margin: 0pt 0pt 3px; padding: 0pt; }
+#respond #comment-form-post-to p#comment-form-post-to-edit { margin-top: 3p=
+x; }
+#respond #comment-form-post-to label { padding: 2px 22px 3px 0pt; color: rg=
+ba(0, 0, 0, 0.7); background: url("urn:not-available:http://s1.wp.com/wp-co=
+ntent/mu-plugins/highlander-comments/images/postto-buttons.png") no-repeat=
+ scroll 15px -18px transparent; position: relative; left: auto; margin: 0pt=
+; font-weight: normal; }
+#respond #comment-form-post-to label { margin-left: 5px; }
+#respond #comment-form-post-to label input { width: auto; }
+#respond #comment-form-post-to label#labelto-twitter { background-position:=
+ 15px -67px; }
+#respond #comment-form-post-to label#labelto-wordpress { background-positio=
+n: 15px -113px; }
+#respond #comment-form-post-to label span { padding-left: 20px; margin: 0pt=
+; display: none; }
+#respond #comment-form-post-to label input { padding: 0pt ! important; marg=
+in: 0pt 0pt 0pt 4px ! important; }
+#respond #comment-form-post-to-edit { position: absolute; top: 5%; right:=
+ 16px; }
+#respond #comment-form-post-to-edit a { color: rgba(0, 0, 0, 0.4); font-siz=
+e: 12px; }
+#respond #comment-form-edit-share-text { display: none; }
+#respond #comment-form-share-text-padder { padding: 5px 7px ! important; }
+#respond #comment-form-edit-share-text textarea { height: 40px; font-size:=
+ 12px; }
+#respond #comment-form-edit-share-text .comment-form-padder { padding: 8px=
+ 12px; }
+#respond #comment-form-edit-share-text p { font-size: 12px; color: rgb(119,=
+ 119, 119); text-shadow: 0pt -1px 1px rgb(255, 255, 255); margin: 5px 0pt=
+ 0pt; text-align: right; }
+#respond p#wordpress-login-first { display: none; margin: 0pt 0pt 10px; bac=
+kground: none repeat scroll 0% 0% rgba(0, 0, 0, 0.07); padding: 5px 10px;=
+ }
+#respond #comment-form-subscribe { float: left; padding-left: 5px; margin-t=
+op: 15px; line-height: 18px ! important; }
+#respond #comment-form-subscribe p { margin: 0pt; padding: 0pt 0pt 2px; bor=
+der: medium none; }
+#respond p.comment-subscription-form input { height: auto; width: auto; }
+#respond p.comment-subscription-form label { font-size: 12px ! important;=
+ text-transform: none; font-weight: normal; margin: 0pt; }
+#respond .form-submit { float: right; padding: 10px 5px 10px 0pt; white-spa=
+ce: nowrap; clear: none ! important; line-height: 18px ! important; width:=
+ auto ! important; margin: 0pt; border: medium none; }
+#respond .form-submit input, #respond .form-submit input#comment-submit, #r=
+espond .comment-form-fields input[type=3D"submit"], #respond p.form-submit=
+ input[type=3D"submit"], #respond input[type=3D"submit"] { line-height: 18p=
+x ! important; border: 1px solid rgb(204, 204, 204); padding: 3px 10px ! im=
+portant; font-size: 14px ! important; border-radius: 15px 15px 15px 15px;=
+ background: url("urn:not-available:http://s1.wp.com/wp-content/mu-plugins/=
+highlander-comments/images/button-back.gif") repeat-x scroll left bottom tr=
+ansparent; cursor: pointer; color: rgb(85, 85, 85) ! important; text-shadow=
+: 0pt 1px 0pt rgba(255, 255, 255, 0.45); min-width: 0pt; width: auto; heigh=
+t: auto; font-family: Arial,Helvetica,Tahoma,Verdana,sans-serif; font-weigh=
+t: normal ! important; }
+#respond .form-submit input:hover, #respond .comment-form-fields input[type=
+=3D"submit"]:hover, #respond p.form-submit input[type=3D"submit"]:hover, #r=
+espond input[type=3D"submit"]:hover { background: url("urn:not-available:ht=
+tp://s1.wp.com/wp-content/mu-plugins/highlander-comments/images/button-back=
+-over.gif") repeat-x scroll left top transparent; border-color: rgb(187, 18=
+7, 187); }
+#respond .form-submit input.disabled, #respond .comment-form-fields input.d=
+isabled[type=3D"submit"] { color: rgb(170, 170, 170); }
+#respond .form-submit input.disabled:hover, #respond .comment-form-fields=
+ input.disabled[type=3D"submit"]:hover { cursor: default; background: url("=
+urn:not-available:http://s1.wp.com/wp-content/mu-plugins/highlander-comment=
+s/images/button-back.gif") repeat-x scroll left bottom rgb(255, 255, 255);=
+ border-color: rgb(204, 204, 204); }
+#respond .comment-form-fields input[type=3D"submit"] { margin-top: 15px; }
+#respond #comment-form-load-service { height: 60px; }
+#respond #comment-form-load-service p { text-align: center; font-size: 14px=
+; background: url("urn:not-available:http://s1.wp.com/wp-content/mu-plugins=
+/highlander-comments/images/loader.gif") no-repeat scroll center top transp=
+arent; padding-top: 25px; color: rgba(0, 0, 0, 0.6); }
+#wordpress-login-iframe { width: 100%; height: 115px; border: medium none=
+ ! important; }
+#respond label.error { color: rgb(225, 0, 0); }
+#respond div.error { border-color: rgb(255, 122, 122) ! important; }
+#respond p.guidelines, #respond p.comments-rss, #respond .form-section { di=
+splay: none; }
+#respond div.clear { clear: both; }
+#respond .social_buttons { font-weight: normal; letter-spacing: 0pt; color:=
+ rgb(255, 255, 255) ! important; outline: medium none; cursor: pointer; bor=
+der: 0pt none; padding: 0pt; text-decoration: none ! important; }
+#respond .sb_24 > span, #respond .sb_24 > span:before { height: 22px; line-=
+height: 22px ! important; font-size: 12px; }
+#respond .sb_24 > span:before { width: 26px; }
+#respond .sb_24 > span { padding-right: 10px; }
+#respond #comment-form-nascar.icon-only .sb_24 > span { width: 26px; paddin=
+g: 0pt; }
+#respond .sb_24, #respond .sb_24 > span { border-radius: 3px 3px 3px 3px;=
+ }
+#respond .social_buttons > span:before { background: url("urn:not-available=
+:http://s1.wp.com/wp-content/mu-plugins/highlander-comments/images/login-ic=
+ons.png") no-repeat scroll 0% 0% transparent; }
+#respond .sb_guest.sb_24 > span:before { background-position: 5px -45px; }
+#respond .sb_wordpress.sb_24 > span:before { background-position: 5px -146p=
+x; }
+#respond .sb_facebook.sb_24 > span:before { background-position: 7px 4px;=
+ }
+#respond .sb_twitter.sb_24 > span:before { background-position: 7px -95px; }
+#respond .social_buttons { font-family: Arial,Helvetica,Tahoma,Verdana,sans=
+-serif ! important; font-size: 12px ! important; display: block; position:=
+ relative; text-shadow: 0pt -1px 0pt rgba(0, 0, 0, 0.5); border-left: mediu=
+m none; border-right: medium none; border-bottom: medium none; }
+#respond .social_buttons > span { background: -moz-linear-gradient(center=
+ top , rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 40%, transparent 70=
+%, rgba(0, 0, 0, 0.1)) repeat scroll 0% 0% transparent; border-right: 1px=
+ solid rgba(0, 0, 0, 0.1); border-left: 1px solid rgba(0, 0, 0, 0.1); -moz-=
+border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom=
+-colors: none; -moz-border-left-colors: none; -moz-border-image: none; bord=
+er-width: 1px; border-style: solid; border-color: rgba(255, 255, 255, 0.5)=
+ rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.3); display: block; overflow: visible;=
+ white-space: nowrap; }
+#respond .social_buttons > span:before { box-shadow: 1px 0pt 1px rgba(255,=
+ 255, 255, 0.5); background-repeat: no-repeat; border-right: 1px solid rgba=
+(0, 0, 0, 0.1); content: ""; display: block; float: left; margin-right: 10p=
+x; }
+#respond .sb_guest { background: -moz-linear-gradient(center top , rgb(225,=
+ 225, 225), rgb(204, 205, 204)) repeat scroll 0% 0% transparent; border: 1p=
+x solid rgb(188, 188, 188); text-shadow: none; }
+#respond .sb_guest:hover { background: none repeat scroll 0% 0% rgb(219, 21=
+9, 219); }
+#respond .sb_guest > span { border-top: 1px solid rgba(0, 0, 0, 0.01); bord=
+er-bottom: 1px solid rgba(0, 0, 0, 0.3); color: rgb(84, 84, 84); }
+#respond .sb_wordpress { background: -moz-linear-gradient(center top , rgb(=
+117, 116, 116), rgb(84, 84, 84)) repeat scroll 0% 0% transparent; border:=
+ 1px solid rgb(63, 63, 63); }
+#respond .sb_wordpress:hover { background: none repeat scroll 0% 0% rgb(75,=
+ 75, 75); }
+#respond .sb_wordpress > span { border-top: 1px solid rgba(255, 255, 255,=
+ 0.5); border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+#respond .sb_facebook { background: -moz-linear-gradient(center top , rgb(9=
+4, 118, 171), rgb(48, 81, 146)) repeat scroll 0% 0% transparent; border: 1p=
+x solid rgb(94, 118, 171); }
+#respond .sb_facebook:hover { background: none repeat scroll 0% 0% rgb(72,=
+ 99, 174); }
+#respond .sb_facebook > span { border-top: 1px solid rgba(255, 255, 255, 0.=
+5); border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+#respond .sb_twitter { background: -moz-linear-gradient(center top , rgb(16=
+7, 231, 235), rgb(133, 220, 226)) repeat scroll 0% 0% transparent; border:=
+ 1px solid rgb(167, 231, 235); }
+#respond .sb_twitter:hover { background: none repeat scroll 0% 0% rgb(159,=
+ 219, 223); }
+#respond .sb_twitter > span { border-top: 1px solid rgba(255, 255, 255, 0.7=
+); border-bottom: 1px solid rgb(124, 158, 160); text-shadow: 0pt 1px 0pt rg=
+ba(255, 255, 255, 0.7); color: rgb(60, 107, 156); }
+.highlander-dark #respond form { background: none repeat scroll 0% 0% rgba(=
+255, 255, 255, 0.3); }
+.highlander-dark #respond .comment-textarea label { color: rgba(255, 255,=
+ 255, 0.6); }
+.highlander-dark #respond #comment-form-comment, .highlander-dark #comment-=
+form-share-text-padder { box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.55) inset;=
+ background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.7); border: 1px solid=
+ rgba(255, 255, 255, 0.13); }
+.highlander-dark #respond #comment-form-comment.active, .highlander-dark #c=
+omment-form-share-text-padder:active { box-shadow: 2px 2px 3px rgba(0, 0,=
+ 0, 0.55) inset; border: 1px solid rgba(255, 255, 255, 0.2); }
+.highlander-dark #respond #comment-form-comment textarea, .highlander-dark=
+ #comment-form-share-text-padder textarea { color: rgba(255, 255, 255, 0.8)=
+; text-shadow: 0pt 1px 0pt rgba(0, 0, 0, 0.45); }
+.highlander-dark #respond #comment-form-identity { background: none repeat=
+ scroll 0% 0% rgba(0, 0, 0, 0.8); border-top: 1px solid rgba(0, 0, 0, 0.9);=
+ }
+.highlander-dark #respond #comment-form-identity #comment-form-nascar ul li=
+.selected { background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.15);=
+ box-shadow: 0pt 0pt 5px rgba(0, 0, 0, 0.3); }
+.highlander-dark #respond .comment-form-service { background: none repeat=
+ scroll 0% 0% rgba(255, 255, 255, 0.15); text-shadow: 0pt 1px 0pt rgba(0,=
+ 0, 0, 0.45); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.highlander-dark #respond .comment-form-avatar img { border: 1px solid rgba=
+(255, 255, 255, 0.35); background: none repeat scroll 0% 0% rgba(0, 0, 0,=
+ 0.3); }
+.highlander-dark #respond label { color: rgba(255, 255, 255, 0.6); }
+.highlander-dark #respond .comment-form-fields label span.required, .highla=
+nder-dark #respond .comment-form-fields label span.nopublish { color: rgba(=
+255, 255, 255, 0.35); }
+.highlander-dark #respond .comment-form-fields div.comment-form-input { box=
+-shadow: 1px 1px 2px rgba(0, 0, 0, 0.55) inset; background: none repeat scr=
+oll 0% 0% rgba(0, 0, 0, 0.3) ! important; border: 1px solid rgba(255, 255,=
+ 255, 0.2); color: rgba(255, 255, 255, 0.8); }
+.highlander-dark #respond .comment-form-fields div.comment-form-input.activ=
+e { box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.55) inset; background: none rep=
+eat scroll 0% 0% rgba(0, 0, 0, 0.37) ! important; border: 1px solid rgba(25=
+5, 255, 255, 0.25); color: rgba(255, 255, 255, 0.8) ! important; }
+.highlander-dark #respond .comment-form-fields div.comment-form-input input=
+ { color: rgb(211, 211, 211) ! important; }
+.highlander-dark #respond .comment-form-fields label { color: rgba(255, 255=
+, 255, 0.7); }
+.highlander-dark #respond .comment-form-fields h5 { color: rgba(255, 255,=
+ 255, 0.8); }
+.highlander-dark #respond .comment-form-fields p.comment-form-posting-as,=
+ .highlander-dark #respond .comment-form-fields p.comment-form-log-out { co=
+lor: rgba(255, 255, 255, 0.55); }
+.highlander-dark #respond .comment-form-service a { color: rgba(255, 255,=
+ 255, 0.85); }
+.highlander-dark #respond label.error { color: rgb(233, 64, 67); }
+.highlander-dark #respond div.error { border-color: rgb(255, 33, 33) ! impo=
+rtant; }
+.highlander-dark #respond #comment-form-post-to { background: none repeat=
+ scroll 0% 0% rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(255, 255=
+, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.highlander-dark #respond #comment-form-post-to label, .highlander-dark #re=
+spond #comment-form-post-to-edit a, .highlander-dark #respond #comment-form=
+-edit-share-text p { color: rgb(185, 185, 185); text-shadow: none; }
+.hab-sl #respond .form-submit { float: left; }
+.hab-sl #respond #comment-form-subscribe { float: right; }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-EA0A2C47:http://s0.wp.com/wp-content/plugins/syntaxhighlighter-wpcom/shThemeDefault.css?m=1306911997g&amp;ver=2.1.364b
+
+/* Effective stylesheet produced by snapshot save */
+.syntaxhighlighter, .syntaxhighlighter div, .syntaxhighlighter code, .synta=
+xhighlighter table, .syntaxhighlighter table td, .syntaxhighlighter table=
+ tr, .syntaxhighlighter table tbody { margin: 0pt ! important; padding: 0pt=
+ ! important; border: 0pt none ! important; outline: 0pt none ! important;=
+ background: none repeat scroll 0% 0% transparent ! important; text-align:=
+ left ! important; float: none ! important; vertical-align: baseline ! impo=
+rtant; position: static ! important; left: auto ! important; top: auto ! im=
+portant; right: auto ! important; bottom: auto ! important; height: auto !=
+ important; width: auto ! important; line-height: 1.3em ! important; font-f=
+amily: "Consolas","Bitstream Vera Sans Mono","Courier New",Courier,monospac=
+e ! important; font-weight: normal ! important; font-style: normal ! import=
+ant; font-size: 11px ! important; min-height: inherit ! important; directio=
+n: ltr ! important; text-shadow: none ! important; }
+.syntaxhighlighter { width: 99% ! important; margin: 1em 0pt ! important;=
+ padding: 1px ! important; position: relative ! important; }
+.syntaxhighlighter code { display: inline ! important; }
+.syntaxhighlighter .bold { font-weight: bold ! important; }
+.syntaxhighlighter .italic { font-style: italic ! important; }
+.syntaxhighlighter .line {  }
+.syntaxhighlighter .no-wrap .line .content { white-space: pre ! important; }
+.syntaxhighlighter .line table { border-collapse: collapse ! important; }
+.syntaxhighlighter .line td { vertical-align: top ! important; }
+.syntaxhighlighter .line .number { width: 3em ! important; }
+.syntaxhighlighter .line .number code { width: 2.7em ! important; padding-r=
+ight: 0.3em ! important; text-align: right ! important; display: block ! im=
+portant; }
+.syntaxhighlighter .line .content { padding-left: 0.5em ! important; }
+.syntaxhighlighter .line .spaces {  }
+.syntaxhighlighter.nogutter .line .content { border-left: medium none ! imp=
+ortant; }
+.syntaxhighlighter .bar { display: none ! important; }
+.syntaxhighlighter .bar.show { display: block ! important; }
+.syntaxhighlighter.collapsed .bar { display: block ! important; }
+.syntaxhighlighter.collapsed .lines { display: none ! important; }
+.syntaxhighlighter .lines.no-wrap { overflow-x: auto ! important; overflow-=
+y: hidden ! important; }
+.syntaxhighlighter .toolbar { position: absolute ! important; right: 0px !=
+ important; top: 0px ! important; font-size: 1px ! important; padding: 8px=
+ 8px 8px 0pt ! important; }
+.syntaxhighlighter.collapsed .toolbar { font-size: 80% ! important; padding=
+: 0.2em 0pt 0.5em 0.5em ! important; position: static ! important; }
+.syntaxhighlighter .toolbar a.item, .syntaxhighlighter .toolbar .item { dis=
+play: block ! important; float: left ! important; margin-left: 8px ! import=
+ant; background-repeat: no-repeat ! important; overflow: hidden ! important=
+; text-indent: -5000px ! important; }
+.syntaxhighlighter.collapsed .toolbar .item { display: none ! important; }
+.syntaxhighlighter.collapsed .toolbar .item.expandSource { background-image=
+: url("urn:not-available:http://s0.wp.com/wp-content/plugins/syntaxhighligh=
+ter-wpcom/magnifier.png") ! important; display: inline ! important; text-in=
+dent: 0pt ! important; width: auto ! important; float: none ! important; he=
+ight: 16px ! important; padding-left: 20px ! important; }
+.syntaxhighlighter .toolbar .item.viewSource { background-image: url("urn:n=
+ot-available:http://s0.wp.com/wp-content/plugins/syntaxhighlighter-wpcom/pa=
+ge_white_code.png") ! important; }
+.syntaxhighlighter .toolbar .item.printSource { background-image: url("urn:=
+not-available:http://s0.wp.com/wp-content/plugins/syntaxhighlighter-wpcom/p=
+rinter.png") ! important; }
+.syntaxhighlighter .toolbar .item.copyToClipboard { text-indent: 0pt ! impo=
+rtant; background: none repeat scroll 0% 0% transparent ! important; overfl=
+ow: visible ! important; }
+.syntaxhighlighter .toolbar .item.about { background-image: url("urn:not-av=
+ailable:http://s0.wp.com/wp-content/plugins/syntaxhighlighter-wpcom/help.pn=
+g") ! important; }
+.syntaxhighlighter.printing .line .number { color: rgb(187, 187, 187) ! imp=
+ortant; }
+.syntaxhighlighter.printing .line .content { color: rgb(0, 0, 0) ! importan=
+t; }
+.syntaxhighlighter.printing .toolbar { display: none ! important; }
+.syntaxhighlighter.printing a { text-decoration: none ! important; }
+.syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {=
+ color: rgb(0, 0, 0) ! important; }
+.syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comment=
+s a { color: rgb(0, 130, 0) ! important; }
+.syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a=
+ { color: blue ! important; }
+.syntaxhighlighter.printing .keyword { color: rgb(0, 102, 153) ! important;=
+ font-weight: bold ! important; }
+.syntaxhighlighter.printing .preprocessor { color: gray ! important; }
+.syntaxhighlighter.printing .variable { color: rgb(170, 119, 0) ! important=
+; }
+.syntaxhighlighter.printing .value { color: rgb(0, 153, 0) ! important; }
+.syntaxhighlighter.printing .functions { color: rgb(255, 20, 147) ! importa=
+nt; }
+.syntaxhighlighter.printing .constants { color: rgb(0, 102, 204) ! importan=
+t; }
+.syntaxhighlighter.printing .script { font-weight: bold ! important; }
+.syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a=
+ { color: rgb(128, 128, 128) ! important; }
+.syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a=
+ { color: rgb(255, 20, 147) ! important; }
+.syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a=
+ { color: red ! important; }
+.syntaxhighlighter { background-color: rgb(255, 255, 255) ! important; bord=
+er: 1px solid rgb(224, 224, 224) ! important; padding: 0pt ! important; }
+.syntaxhighlighter.nogutter { border: medium none ! important; }
+.syntaxhighlighter .line.highlighted .number { color: black ! important; }
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlig=
+hted.alt2 { background-color: rgb(224, 224, 224) ! important; }
+.syntaxhighlighter .line .number { color: rgb(175, 175, 175) ! important;=
+ }
+.syntaxhighlighter .line .content { border-left: 3px solid rgb(204, 204, 20=
+4) ! important; color: rgb(0, 0, 0) ! important; }
+.syntaxhighlighter.printing .line .content { border: 0pt none ! important; }
+.syntaxhighlighter .line.alt1 { background-color: rgb(255, 255, 255) ! impo=
+rtant; }
+.syntaxhighlighter .line.alt2 { background-color: rgb(248, 248, 248) ! impo=
+rtant; }
+.syntaxhighlighter .toolbar { background-color: rgb(248, 248, 248) ! import=
+ant; border: 1px solid rgb(238, 238, 238) ! important; }
+.syntaxhighlighter .toolbar a { color: rgb(160, 160, 160) ! important; }
+.syntaxhighlighter .toolbar a:hover { color: red ! important; }
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a { color: rgb(0, 0,=
+ 0) ! important; }
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a { color: rgb(0=
+, 130, 0) ! important; }
+.syntaxhighlighter .string, .syntaxhighlighter .string a { color: blue ! im=
+portant; }
+.syntaxhighlighter .keyword { color: rgb(0, 102, 153) ! important; font-wei=
+ght: bold ! important; }
+.syntaxhighlighter .preprocessor { color: gray ! important; }
+.syntaxhighlighter .variable { color: rgb(170, 119, 0) ! important; }
+.syntaxhighlighter .value { color: rgb(0, 153, 0) ! important; }
+.syntaxhighlighter .functions { color: rgb(255, 20, 147) ! important; }
+.syntaxhighlighter .constants { color: rgb(0, 102, 204) ! important; }
+.syntaxhighlighter .script { background-color: yellow ! important; }
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a { color: rgb(128,=
+ 128, 128) ! important; }
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a { color: rgb(255,=
+ 20, 147) ! important; }
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a { color: red ! imp=
+ortant; }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-6ADD2D91:http://s.gravatar.com/css/hovercard.css?v=6
+
+/* Effective stylesheet produced by snapshot save */
+.gcard { position: absolute; z-index: 20; box-shadow: 0pt 0pt 8px rgb(136,=
+ 136, 136); max-width: 400px; }
+.gcard {  }
+.gcard .grav-inner { position: relative; background: none repeat scroll 0%=
+ 0% rgba(0, 0, 0, 0.85); padding: 18px; color: rgb(255, 255, 255); font-fam=
+ily: Helvetica,Arial,Tahoma,sans-serif; font-size: 12px; line-height: 150%;=
+ text-shadow: 0px -1px 0pt rgb(0, 0, 0); font-style: normal ! important; }
+.gcard .grav-inner * { font-style: normal ! important; }
+.gcard .gcard-about { clear: left; }
+.gcard a { color: rgb(255, 255, 255) ! important; border: medium none ! imp=
+ortant; text-decoration: none ! important; font-family: Helvetica,Arial,Tah=
+oma,sans-serif; }
+.gcard a:hover { text-decoration: none ! important; border: medium none !=
+ important; color: rgb(81, 166, 218) ! important; }
+.gcard ul { margin: 0pt; padding: 0pt; list-style: none outside none; font-=
+size: 12px; }
+.gcard ul li { list-style: none outside none; }
+.gcard p { color: rgb(255, 255, 255); text-align: left; font-size: 12px; ma=
+rgin: 0pt 0pt 10px; }
+.gcard .grav-small { font-size: 10px; }
+.gcard .grav-grav { float: left; border: 3px solid rgb(255, 255, 255); padd=
+ing: 0px ! important; box-shadow: 0pt 1px 0pt rgb(100, 168, 209) inset, 0pt=
+ 1px 5px rgb(0, 0, 0); line-height: 50%; }
+.gcard .grav-grav img { padding: 0px; margin: 0px; }
+.gcard .grav-info { float: left; width: 220px; margin-left: 20px; }
+.gcard h4 { float: left; margin: 0pt 10px 5px 0pt ! important; padding: 0pt=
+ ! important; font-size: 18px; font-family: Helvetica,Arial,Tahoma,sans-ser=
+if; line-height: 115%; vertical-align: middle; text-transform: none; text-a=
+lign: left; }
+.gcard h4, x:-moz-any-link, x:default { line-height: 90%; }
+.gcard .grav-about, .gcard .grav-links, .gcard .grav-gallery, .gcard .grav-=
+services { display: none; }
+.gcard-about .grav-about, .gcard-links .grav-links, .gcard-gallery .grav-ga=
+llery, .gcard-services .grav-services { display: block; }
+.grav-about { clear: left; }
+a.grav-edit-profile { border-bottom: 1px solid rgb(102, 102, 102) ! importa=
+nt; }
+a.grav-edit-profile:hover { border-bottom: 1px solid rgb(68, 68, 68) ! impo=
+rtant; }
+.grav-loc { clear: left; font-size: 90% ! important; margin: 0px 0px 1px;=
+ color: rgb(159, 160, 159) ! important; }
+.gcard .grav-cardarrow { position: absolute; top: 0pt; width: 10px; left:=
+ -7px; background: url("urn:not-available:http://s.gravatar.com/images/card=
+arrow.gif") no-repeat scroll right top transparent; }
+.pos-left .grav-cardarrow { left: auto; right: -10px; background: url("urn:=
+not-available:http://s.gravatar.com/images/cardarrow-left.gif") no-repeat=
+ scroll right top transparent; }
+.gcard .grav-tag { clear: both; position: absolute; top: 0pt; right: -22px;=
+ background: url("urn:not-available:http://s.gravatar.com/images/grav-tag.p=
+ng") no-repeat scroll right top transparent; width: 48px; height: 61px; }
+.pos-left .grav-tag { right: auto; left: -22px; background: url("urn:not-av=
+ailable:http://s.gravatar.com/images/grav-tag-left.png") no-repeat scroll=
+ right top transparent; }
+.gcard .grav-tag a { width: 48px; height: 61px; display: block; text-decora=
+tion: none; background: url("urn:not-available:http://s.gravatar.com/images=
+/grav-tag.gif") no-repeat scroll 22px 0pt transparent; }
+.pos-left .grav-tag a { -moz-transform: scaleX(-1); }
+.gcard .grav-extra { float: left; margin: 5px 5px 0pt 0pt; vertical-align:=
+ middle; }
+.gcard .grav-extra, x:-moz-any-link, x:default { margin-top: 1px; }
+.gcard .grav-extra a { display: block; line-height: 80%; padding: 3px 5px=
+ 3px 17px ! important; color: rgb(0, 0, 0) ! important; font-size: 11px; bo=
+rder-radius: 3px 3px 3px 3px; text-shadow: none; }
+.gcard .grav-extra, x:-moz-any-link, x:default { padding-bottom: 2px ! impo=
+rtant; }
+.gcard .grav-extra a:hover { background-color: rgb(59, 145, 197); color: rg=
+b(255, 255, 255) ! important; }
+.gcard .comments a { background: url("urn:not-available:http://s.gravatar.c=
+om/images/pillicon.png") no-repeat scroll 3px 2px rgb(255, 255, 255); }
+.gcard .comments a:hover { background-position: -11px 2px; }
+.gcard .likes a { background: url("urn:not-available:http://s.gravatar.com/=
+images/pillicon.png") no-repeat scroll 4px -13px rgb(255, 255, 255); }
+.gcard .likes a:hover { background-position: -10px -13px; }
+.gcard .grav-disable { margin: 3px 0px -5px; font-size: 10px; line-height:=
+ 10px; }
+.gcard .grav-disable a { color: rgb(102, 102, 102) ! important; }
+.gcard .grav-disable a:hover { color: rgb(255, 255, 255) ! important; }
+a.grav-view-complete { display: inline-block; padding: 5px 15px; margin: 0p=
+t 0pt 10px; background: -moz-linear-gradient(center top , rgb(61, 146, 198)=
+ 0%, rgb(14, 116, 178) 100%) repeat scroll 0% 0% transparent; border-radius=
+: 2px 2px 2px 2px; border: medium none; box-shadow: 0pt 1px 0pt rgb(100, 16=
+8, 209) inset, 0pt 1px 3px rgb(0, 0, 0); color: rgb(255, 255, 255); text-sh=
+adow: 0pt -1px 0pt rgb(18, 72, 105); font-size: 12px; font-family: 'Helveti=
+ca Neue Bold','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight: bol=
+d; text-decoration: none; }
+a.grav-view-complete:hover { color: rgb(255, 255, 255) ! important; backgro=
+und: -moz-linear-gradient(center top , rgb(81, 166, 218) 0%, rgb(61, 146,=
+ 198) 100%) repeat scroll 0% 0% transparent; box-shadow: 0pt 1px 0pt rgb(13=
+4, 193, 229) inset, 0pt 1px 5px rgb(0, 0, 0); }
+a.grav-view-complete:active { background: -moz-linear-gradient(center top=
+ , rgb(14, 116, 178) 0%, rgb(61, 146, 198) 100%) repeat scroll 0% 0% transp=
+arent; box-shadow: 0pt -1px 0pt rgb(79, 156, 203) inset, 0pt 1px 1px rgb(0,=
+ 0, 0); color: rgb(211, 230, 241); }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-5790BCF2:http://s.gravatar.com/css/services.css?v=5
+
+/* Effective stylesheet produced by snapshot save */
+.grofile .ims_aim { background-position: 0px -288px; }
+.grofile .accounts_bebo { background-position: 0px -80px; }
+.grofile .accounts_blogger { background-position: 0px -336px; }
+.grofile .accounts_buzz { background-position: 0px -416px; }
+.grofile .phoneNumbers_mobile { background-position: 0px -576px; }
+.grofile .accounts_delicious { background-position: 0px -240px; }
+.grofile .accounts_digg { background-position: 0px -144px; }
+.grofile .accounts_dopplr { background-position: 0px -32px; }
+.grofile .emails_primary { background-position: 0px -112px; }
+.grofile .accounts_evernote { background-position: 0px -544px; }
+.grofile .accounts_facebook { background-position: 0px 0px; }
+.grofile .accounts_flickr { background-position: 0px -400px; }
+.grofile .accounts_friendfeed { background-position: 0px -224px; }
+.grofile .accounts_foursquare { background-position: 0px -704px; }
+.grofile .accounts_google { background-position: 0px -752px; }
+.grofile .ims_gtalk { background-position: 0px -640px; }
+.grofile .phoneNumbers_home { background-position: 0px -688px; }
+.grofile .ims_icq { background-position: 0px -592px; }
+.grofile .accounts_ilike { background-position: 0px -64px; }
+.grofile .ims_jabber, .grofile .ims_xmpp { background-position: 0px -656px;=
+ }
+.grofile .accounts_lastfm { background-position: 0px -496px; }
+.grofile .accounts_linkedin { background-position: 0px -368px; }
+.grofile .accounts_mixx { background-position: 0px -528px; }
+.grofile .accounts_mobileme { background-position: 0px -320px; }
+.grofile .ims_msn { background-position: 0px -624px; }
+.grofile .accounts_myspace { background-position: 0px -352px; }
+.grofile .accounts_netvibes { background-position: 0px -272px; }
+.grofile .accounts_newsvine { background-position: 0px -96px; }
+.grofile .accounts_openid { background-position: 0px -128px; }
+.grofile .accounts_picasa { background-position: 0px -256px; }
+.grofile .accounts_posterous { background-position: 0px -560px; }
+.grofile .accounts_qik { background-position: 0px -672px; }
+.grofile .accounts_reddit { background-position: 0px -176px; }
+.grofile .accounts_rss { background-position: 0px -480px; }
+.grofile .ims_skype { background-position: 0px -16px; }
+.grofile .accounts_stumbleupon { background-position: 0px -192px; }
+.grofile .accounts_technorati { background-position: 0px -432px; }
+.grofile .accounts_tripit { background-position: 0px -720px; }
+.grofile .accounts_tumblr { background-position: 0px -448px; }
+.grofile .accounts_twitter { background-position: 0px -464px; }
+.grofile .accounts_vimeo { background-position: 0px -384px; }
+.grofile .accounts_wordpress { background-position: 0px -304px; }
+.grofile .phoneNumbers_work { background-position: 0px -688px; }
+.grofile .accounts_yahoo { background-position: 0px -160px; }
+.grofile .accounts_yelp { background-position: 0px -512px; }
+.grofile .ims_yahoo { background-position: 0px -608px; }
+.grofile .accounts_youtube { background-position: 0px -208px; }
+.grofile .accounts_gowalla { background-position: 0px -736px; }
+.grofile .accounts_goodreads { background-position: 0px -768px; }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-9B686ACA:chrome://translator/skin/floatingPanel.css
+
+/* Effective stylesheet produced by snapshot save */
+#translator-floating-panel { background: none repeat scroll 0% 0% transpare=
+nt; border: 0pt none; border-radius: 12px 12px 12px 12px; bottom: auto; col=
+or: rgb(17, 17, 17); cursor: pointer; font-family: Helvetica,Arial,sans-ser=
+if; font-size: 13px ! important; font-style: normal; font-weight: normal;=
+ height: auto; left: 0pt; margin: 0pt; max-height: 16px; max-width: 16px;=
+ min-height: 0pt; min-width: 0pt; opacity: 0.4; overflow: hidden; outline:=
+ 0pt none; padding: 0pt; position: fixed; right: auto; text-align: left; to=
+p: 0pt; width: auto; z-index: 2147483647; }
+#translator-floating-panel:hover { opacity: 1; }
+#translator-floating-panel * { background: none repeat scroll 0% 0% transpa=
+rent; border: 0pt none; color: inherit; cursor: inherit; font-family: inher=
+it; font-size: inherit; font-style: inherit; font-weight: inherit; height:=
+ auto; margin: 0pt; opacity: 1; overflow: auto; outline: 0pt none; padding:=
+ 0pt; text-align: inherit; text-decoration: none; width: auto; }
+#translator-floating-panel.translator-theme-original { background-color: rg=
+b(217, 198, 182); border: 1px solid rgb(120, 79, 43); padding: 2px; }
+#translator-floating-panel.translator-theme-default { background-color: rgb=
+(240, 240, 240); border: 1px solid rgb(151, 151, 151); padding: 2px; }
+#translator-floating-panel.translator-theme-system { -moz-appearance: dialo=
+g; }
+#translator-floating-panel-button { background: url("chrome://translator/sk=
+in/icons.png") no-repeat scroll left top transparent; height: 16px; width:=
+ 16px; }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://translator/skin/icons.png
+
+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
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://flashblock/content/flash.png
+
+iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAA6xJREFUeNrsmc9L22AYx02a/rItutIh1Wla24uDwarFXjzoRaSnzqMg
+3gT/AvEfEBR78epRp3gY20EHnhwoCoogXhybDhso7Zy17dJqm7TNnvewkWSLTdKkUdgLgbxp++aT
+5+f3TTGO41qewsBbnsh4MqAEf7K6uupIJBIxi8VCYhhmNwIIQvGeYZgESZIfJicni/8ETaVSsfPz
+c/fR0RFVLBarRoA6HA7T4OCgG4wVg+lbKdcHDg8Pb42CRAPdGzEgFknXm0wmc6lUqqHzi4sLrxGg
+wWAwhRgQiySoOFwebdY/ppoqZhFYFDId08uiNE0Te3t7npOTkw6Kop6trKx8euj7Ihb9XV+tVrG1
+tTXf/v6+D6yEWa3WCmQ2o3R9XUHT6bR1aWkplM/n7a2trWUcxzm164tBMa1cjSDn5+fDtVoNdzqd
+ZRVLNMf1y8vLr1BCEARRkUhS9RYF12gCurGx0ZPL5WzQXQSNw+/3s0NDQ3ehUKhujIpYhKCiJ1cF
+WigUTAcHB6TZbBZYcnx8nB4ZGbmFazk4ivXWf7A8aeH69fV1P9ykxr8WjUbp4eHhK4jXvCYFX1y7
+lI7r62vL6enpC2h/fx4SVBA7NjZGAbwiSF3r6Pb2dhfEFsvx/DY6OpqB6a2merSRzoQK+9nZmReW
+qPHja2FhwQf6Mvh7vrm5+dFQi+7u7j4vl8s4uF0Qn+3t7XdaxL7YoqoXBA3ZA5BydCwn06Ky90yc
+3OPy8tKeTCadcoVRnUO/Xr+1tUVCB2L5sdnd3c3Ozc39lURQojhDkimTyZhhn9UBbq/wr0NxzwLU
+Z7VZrnkyxePx17CmIDY7OzvZSCRCcRoqcdUFH4SwaXZ2NgJF3sWXb6hHT0xM3ABjoRGwhi0K6ty2
+s7PTdXx8TIJrMRAegtgE0VHs7e294jTe18gGzWazxPT0dBRZD1Q6a7fbGbE6CgQCDIgP5PKSrm9K
+6tRR3OPx5KUUDsrymZmZJKim71rsDsRRqMT1nJQ7w+Hw/dTU1A+ApFAF0v3dk1L1BEKYicVidF9f
+3w3Ea1rLnavqZELWhL5dRS72+XwsWLHk9Xp/wmUEedfUt3kPgbrdbnZxcTEJp/coWeCgAZBp1gsJ
+JclUAbCvzQJTIkoe1SBEgqHscrkI6DqVYDBYMwoKMSAWSYvCh9+gs3hsNpthlkb3RgyIRdKikDDv
++vv73wwMDLyEqcUgVgYS9UtbW9t7Qcw22pJZlm3o99Ak5CXX//+ZNB6/BBgA0uDaCJFhtkYAAAAA
+SUVORK5CYII=
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-0333BDC7:http://s0.wp.com/wp-content/themes/pub/blue-green/style.css?m=1306912008g
+
+/* Effective stylesheet produced by snapshot save */
+a { color: rgb(102, 153, 204); text-decoration: none; }
+a img { border: medium none; }
+a:visited { color: rgb(102, 153, 204); }
+a:hover { color: rgb(206, 163, 83); }
+acronym, abbr { border-bottom: 1px dashed rgb(132, 147, 159); }
+acronym, abbr, span.caps { cursor: help; }
+blockquote { border-left: 1px solid rgb(206, 163, 83); margin-left: 3em; pa=
+dding-left: 10px; }
+body { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 76%; mar=
+gin: 10px 0pt; padding: 0pt; background-color: white; color: rgb(51, 51, 51=
+); }
+cite { font-size: 0.9em; font-style: normal; color: rgb(132, 147, 159); }
+code { font-size: 1.1em; font-style: normal; color: rgb(132, 147, 159); }
+form { margin: 0pt; padding: 0pt; }
+form p { margin: 1px 0pt; padding: 0pt; }
+h1, h2, h3, h4 { font-family: Tahoma,Verdana,Helvetica,sans-serif; }
+h1 { font-size: 2em; font-weight: normal; margin: 0pt 0pt 10px; padding: 5p=
+x; background-color: rgb(226, 226, 226); }
+h2 { font-size: 1.3em; font-weight: normal; margin: 0pt 0pt 10px; padding:=
+ 0pt; border-bottom: 1px solid rgb(102, 153, 204); }
+h3 { font-size: 1.2em; font-weight: normal; text-transform: capitalize; mar=
+gin-top: 10px; }
+#comments { clear: both; }
+ol#comments li p { font-size: 1em; }
+p, li, .feedback { font: 1em/1.3em Verdana,Arial,Helvetica,sans-serif; }
+.credit { background: none repeat scroll 0% 0% rgb(102, 153, 204); color:=
+ rgb(255, 255, 255); font-size: 0.9em; margin: 10px 0pt 0pt; padding: 3px;=
+ text-align: center; }
+.credit a:link, .credit a:hover { color: rgb(255, 255, 255); }
+.credit cite { color: rgb(255, 255, 255); }
+.feedback { color: rgb(204, 204, 204); text-align: right; clear: both; }
+.meta { margin: 0pt; padding: 0pt; }
+.meta, .meta a { color: rgb(204, 204, 204); font-weight: normal; letter-spa=
+cing: 0pt; }
+.meta ul { display: inline; margin: 0pt; padding: 0pt; list-style: none out=
+side none; }
+.meta li { display: inline; }
+.post ol li { margin: 10px 0pt; padding: 0pt; }
+.post ol li p { margin: 5px 0pt; padding: 0pt; }
+.storytitle { margin: 0pt; }
+.storytitle a { text-decoration: none; }
+#commentform input, #commentform textarea { background: none repeat scroll=
+ 0% 0% rgb(243, 246, 236); border: 1px solid rgb(132, 147, 159); }
+#commentform textarea { width: 80%; }
+#commentform input:focus, #commentform textarea:focus { background: none re=
+peat scroll 0% 0% rgb(255, 255, 255); border: 1px solid rgb(206, 163, 83); }
+#respond label { clear: right; font-size: 10px; }
+#respond input[type=3D"text"] { float: left; margin-right: 6px; width: 200p=
+x; }
+#respond p { margin-bottom: 10px; line-height: 24px; }
+#respond .comment-form-comment label, #respond .form-allowed-tags { display=
+: none; }
+#respond .required { color: red; font-size: 10px; }
+#respond .subscribe-label { font-size: 12px; }
+#respond .comment-notes { font-size: 11px; }
+#content { margin: 30px 13em 0pt 3em; padding-right: 70px; }
+#header { background-color: rgb(153, 204, 102); font: 2em Georgia,Tahoma,Ve=
+rdana,Helvetica,sans-serif; color: rgb(255, 255, 255); margin: 0pt; padding=
+: 10px 20px; }
+#header a { color: rgb(255, 255, 255); text-decoration: none; }
+#header a:hover { text-decoration: underline; }
+#menu { background: none repeat scroll 0% 0% rgb(243, 246, 236); padding:=
+ 5px; position: absolute; right: 30px; top: 31px; width: 14em; }
+#menu form { margin: 0pt 0pt 0pt 13px; }
+#menu input { font-size: 0.9em; background: none repeat scroll 0% 0% rgb(24=
+5, 245, 245); border: 1px solid rgb(132, 147, 159); }
+#menu input:focus { background: none repeat scroll 0% 0% rgb(255, 255, 255)=
+; border: 1px solid rgb(206, 163, 83); }
+#menu ul { color: rgb(132, 147, 159); list-style-type: none; margin: 0pt;=
+ padding-left: 3px; text-transform: lowercase; }
+#menu ul li { font: 1em Verdana,Arial,Helvetica,sans-serif; margin-top: 10p=
+x; }
+#menu ul ul { list-style-type: none; font-variant: normal; font-weight: nor=
+mal; line-height: 100%; margin: 0pt; padding: 0pt; text-align: left; border=
+-top: 1px solid rgb(255, 255, 255); }
+#menu ul ul li { border: 0pt none; font: 1em Verdana,Arial,Helvetica,sans-s=
+erif; letter-spacing: 0pt; margin-top: 5px; padding: 0pt 0pt 0pt 10px; }
+#menu ul ul li a { text-decoration: none; }
+#menu ul ul li a:hover { color: rgb(206, 163, 83); }
+#wp-calendar { background-color: rgb(250, 250, 250); empty-cells: show; fon=
+t-size: 1em; margin: 0pt; width: 99%; }
+#wp-calendar #next a { padding-right: 10px; text-align: right; }
+#wp-calendar #prev a { padding-left: 10px; text-align: left; }
+#wp-calendar a { display: block; text-decoration: none; }
+#wp-calendar a:hover { background: none repeat scroll 0% 0% rgb(224, 230,=
+ 224); color: rgb(206, 163, 83); }
+#wp-calendar caption { text-align: left; border-bottom: 1px solid rgb(255,=
+ 255, 255); }
+#wp-calendar td { color: rgb(204, 204, 204); font: 1em Verdana,Arial,Helvet=
+ica,sans-serif; letter-spacing: normal; padding: 1px 0pt; text-align: cente=
+r; }
+#wp-calendar td.pad:hover { background: none repeat scroll 0% 0% rgb(255,=
+ 255, 255); }
+#wp-calendar td:hover, #wp-calendar #today { background: none repeat scroll=
+ 0% 0% rgb(238, 238, 238); color: rgb(51, 51, 51); }
+#wp-calendar th { font-weight: normal; background-color: rgb(239, 239, 239)=
+; text-transform: capitalize; }
+img.centered, img.aligncenter { display: block; margin-left: auto; margin-r=
+ight: auto; }
+img.alignright { padding: 4px; margin: 0pt 0pt 2px 7px; display: inline; }
+img.alignleft { padding: 4px; margin: 0pt 7px 2px 0pt; display: inline; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter, div.aligncenter { display: block; margin-left: auto; margin-r=
+ight: auto; }
+.wp-caption { border: 1px solid rgb(221, 221, 221); text-align: center; bac=
+kground-color: rgb(243, 243, 243); padding-top: 4px; margin: 10px; border-r=
+adius: 3px 3px 3px 3px; }
+.wp-caption img { margin: 0pt; padding: 0pt; border: 0pt none; }
+.wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; padding=
+: 0pt 4px 5px; margin: 0pt; }
+.sticky { background: none repeat scroll 0% 0% rgb(247, 247, 247); padding:=
+ 5px 10px 10px; margin-bottom: 10px; }
+object, embed { max-width: 100%; }
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-826682C5:http://s0.wp.com/wp-includes/js/jquery/jquery.js?m=1306911983g&ver=1.6.1
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-6BAB47C8:http://s1.wp.com/wp-includes/js/comment-reply.js?m=1306911986g&ver=20090102
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-0B1BBF21:http://rt.liftdna.com/liftrtb2_1.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-1AD1F57F:http://rt.liftdna.com/WP.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-6E4095C3:http://www.google-analytics.com/ga.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-CCEFAD26:http://s2.wp.com/wp-content/mu-plugins/akismet-2.5/form.js?m=1308783981g&ver=1
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-DD1E9DB5:http://edge.quantserve.com/quant.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-B9A33D7C:http://s.gravatar.com/js/gprofiles.js?y&ver=MU
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-17694E59:http://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1311367667g&ver=MU
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-E574C566:http://s2.wp.com/wp-content/mu-plugins/highlander-comments/script.js?m=1312573109g&ver=20110804
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-F97C955F:http://s2.wp.com/wp-content/mu-plugins/post-react-2/sharing/sharing.js?m=1309923244g&ver=0.2
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-7A5AF0BF:http://b.scorecardresearch.com/beacon.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-5BEB36C1:http://s1.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shCore.js?m=1306912000g&ver=2.1.364b
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-E4BD00D0:http://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shBrushPlain.js?m=1306912000g&ver=2.1.364b
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-108700AB:http://s.stats.wordpress.com/w.js?20
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_5BA3D085.ABDFA7B9--
